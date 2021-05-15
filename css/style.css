@@ -676,18 +676,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform: translate3d(0, 0, 0);
 }
 
-/* Testimonials Section
+/* Quotes Section
 --------------------------------*/
-#testimonials {
+#quotes {
   background: #f6f6f6;
   padding: 80px 0;
 }
 
-#testimonials .profile {
+#quotes .profile {
   text-align: center;
 }
 
-#testimonials .profile .pic {
+#quotes .profile .pic {
   border-radius: 50%;
   border: 6px solid #fff;
   margin-bottom: 15px;
@@ -696,21 +696,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 260px;
 }
 
-#testimonials .profile .pic img {
+#quotes .profile .pic img {
   max-width: 100%;
 }
 
-#testimonials .profile h4 {
+#quotes .profile h4 {
   font-weight: 700;
   color: #03C4EB;
   margin-bottom: 5px;
 }
 
-#testimonials .profile span {
+#quotes .profile span {
   color: #333333;
 }
 
-#testimonials .quote {
+#quotes .quote {
   position: relative;
   background: #fff;
   padding: 60px;
@@ -720,7 +720,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 5px;
 }
 
-#testimonials .quote b {
+#quotes .quote b {
   display: inline-block;
   font-size: 22px;
   left: -9px;
@@ -728,7 +728,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   top: -8px;
 }
 
-#testimonials .quote small {
+#quotes .quote small {
   display: inline-block;
   right: -9px;
   position: relative;
