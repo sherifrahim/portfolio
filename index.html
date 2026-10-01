@@ -66,6 +66,7 @@
     <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
     <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
     <symbol id="i-radar" viewBox="0 0 24 24"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
   </defs>
@@ -110,7 +111,7 @@
       <a href="#reel" data-spy="reel">Reel</a>
       <a href="#about" data-spy="about">About</a>
       <a href="#experience" data-spy="experience">Experience</a>
-      <a href="#detection" data-spy="detection">Detection</a>
+      <a href="#principles" data-spy="principles">Principles</a>
       <a href="#projects" data-spy="projects">Projects</a>
       <a href="#skills" data-spy="skills">Skills</a>
       <a href="#contact" data-spy="contact">Contact</a>
@@ -149,34 +150,24 @@
         </div>
       </div>
 
-      <div class="soc-wrap reveal" style="--d:.3s">
+      <div class="me-wrap reveal" style="--d:.3s">
         <div class="float-card b" aria-hidden="true"><small>Ingestion cost</small><b class="grad-text">−30–40%</b>
           <svg class="spark" viewBox="0 0 96 30" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 14,8 26,5 38,12 50,14 62,20 74,22 94,26"/></svg></div>
-        <div class="terminal soc" id="soc">
-          <div class="term-bar"><i></i><i></i><i></i><span>Live SOC · multi-tenant · demo data</span></div>
-          <div class="soc-top">
-            <div class="radar" aria-hidden="true">
-            <svg viewBox="0 0 200 200" role="presentation">
-              <defs><linearGradient id="sw" gradientUnits="userSpaceOnUse" x1="100" y1="10" x2="36" y2="36"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs>
-              <circle class="ring" cx="100" cy="100" r="30"/><circle class="ring" cx="100" cy="100" r="60"/><circle class="ring" cx="100" cy="100" r="90"/>
-              <line class="ring" x1="100" y1="8" x2="100" y2="192"/><line class="ring" x1="8" y1="100" x2="192" y2="100"/>
-              <g class="sweep"><path d="M100 100 L100 10 A90 90 0 0 0 36.4 36.4 Z" fill="url(#sw)"/><line x1="100" y1="100" x2="100" y2="10" style="stroke:var(--accent)" stroke-width="1.5"/></g>
-              <circle class="blip" cx="126.2" cy="43.8" r="3" style="animation-delay:-5.58s"/><circle class="blip" cx="139.6" cy="94.4" r="3" style="animation-delay:-4.63s"/><circle class="blip hot" cx="145.6" cy="158.3" r="4" style="animation-delay:-3.63s"/><circle class="blip" cx="83.9" cy="149.5" r="3" style="animation-delay:-2.70s"/><circle class="blip" cx="22.4" cy="119.4" r="3" style="animation-delay:-1.73s"/><circle class="blip" cx="65.8" cy="69.2" r="3" style="animation-delay:-0.80s"/>
-              <circle cx="100" cy="100" r="3.5" style="fill:var(--accent)"/>
-            </svg>
-            </div>
-            <ul class="health" aria-label="Connector health (demo)">
-              <li><span class="hd"></span>Microsoft Sentinel<em>healthy</em></li>
-              <li><span class="hd"></span>Defender XDR<em>healthy</em></li>
-              <li><span class="hd"></span>Entra ID<em>healthy</em></li>
-              <li><span class="hd"></span>Purview DLP<em>healthy</em></li>
-            </ul>
+        <div class="terminal me" id="me">
+          <div class="term-bar"><i></i><i></i><i></i><span>sherif.rahim · career path</span></div>
+          <div class="me-head">
+            <div class="avatar" aria-hidden="true"><span>SR</span></div>
+            <div><strong>Sherif Rahim</strong><small>SOC &amp; Security Engineer · Abu Dhabi</small></div>
+            <span class="now"><i></i>Now at Ansen</span>
           </div>
-          <div class="feed" id="soc-feed" aria-label="Example incident feed (demo data)">
-            <div class="frow"><span class="sev high">High</span><span class="ft">Impossible-travel sign-in<small>Entra ID</small></span><span class="state">Session revoked</span></div>
-            <div class="frow"><span class="sev med">Med</span><span class="ft">Encoded PowerShell from Office<small>Defender XDR</small></span><span class="state">Device isolated</span></div>
-            <div class="frow"><span class="sev low">Info</span><span class="ft">Noisy connector tuned<small>Microsoft Sentinel</small></span><span class="state">Ingestion trimmed</span></div>
-          </div>
+          <ol class="path" id="path" aria-label="Career path">
+              <li><time>2023</time><div><b>SOC Intern</b><small>CFSS Cyber Forensics · Kochi</small></div></li>
+              <li><time>2023–24</time><div><b>IT Support CS Agent</b><small>Sutherland Global Services · Amazon</small></div></li>
+              <li><time>2024</time><div><b>Cybersecurity Engineer Intern</b><small>Ehackify · pen testing &amp; SOC</small></div></li>
+              <li><time>2025</time><div><b>IT Security &amp; Support Engineer</b><small>Virtual Team IT · Abu Dhabi</small></div></li>
+              <li class="current"><time>2025 →</time><div><b>SOC &amp; Security Engineer</b><small>Ansen Technologies · Abu Dhabi</small></div></li>
+          </ol>
+          <div class="me-certs"><span class="chip hot">SC-200</span><span class="chip hot">Security+</span><span class="chip hot">SC-900</span><span class="chip hot">CPT</span><span class="chip wip">SC-500 · in progress</span></div>
         </div>
         <div class="float-card a" aria-hidden="true"><small>Critical infra onboarded</small><b>4 days <span style="font-size:.9rem;color:var(--faint);font-weight:500">vs 10</span></b></div>
       </div>
@@ -393,51 +384,51 @@ T1041  Exfiltration Over C2 Channel</div></div>
   </div>
 </section>
 
-<!-- ======================= DETECTION ======================= -->
-<section id="detection" data-scene="Detection">
+<!-- ======================= PRINCIPLES ======================= -->
+<section id="principles" data-scene="Principles">
   <div class="container">
-    <div class="section-head reveal focus"><span class="eyebrow">03 — Detection engineering</span><h2>Follow the <span class="grad-text">intruder.</span></h2><p>A staged intrusion and the points where a well-tuned SOC catches it. Pick a stage, or let it play. Detections like these live as analytics rules in Sentinel.</p></div>
+    <div class="section-head reveal focus"><span class="eyebrow">03 — How I build</span><h2>Principles I <span class="grad-text">build by.</span></h2><p>Six habits that show up in my day job and my side projects alike — each one with the receipts.</p></div>
     <div class="chain reveal" id="chain" style="--d:.1s">
-      <div class="stages" role="tablist" aria-label="Attack stages">
-        <button class="stage" role="tab" id="st0" aria-selected="true" aria-controls="sp0" tabindex="0"><span class="n">01</span><strong>Initial access</strong><span class="m">T1566</span><i class="fill"></i></button>
-        <button class="stage" role="tab" id="st1" aria-selected="false" aria-controls="sp1" tabindex="-1"><span class="n">02</span><strong>Valid accounts</strong><span class="m">T1078</span><i class="fill"></i></button>
-        <button class="stage" role="tab" id="st2" aria-selected="false" aria-controls="sp2" tabindex="-1"><span class="n">03</span><strong>Execution</strong><span class="m">T1059.001</span><i class="fill"></i></button>
-        <button class="stage" role="tab" id="st3" aria-selected="false" aria-controls="sp3" tabindex="-1"><span class="n">04</span><strong>Credential access</strong><span class="m">T1003.001</span><i class="fill"></i></button>
-        <button class="stage" role="tab" id="st4" aria-selected="false" aria-controls="sp4" tabindex="-1"><span class="n">05</span><strong>Lateral movement</strong><span class="m">T1021</span><i class="fill"></i></button>
-        <button class="stage" role="tab" id="st5" aria-selected="false" aria-controls="sp5" tabindex="-1"><span class="n">06</span><strong>Exfiltration</strong><span class="m">T1041</span><i class="fill"></i></button>
+      <div class="stages" role="tablist" aria-label="Engineering principles">
+        <button class="stage" role="tab" id="st0" aria-selected="true" aria-controls="sp0" tabindex="0"><span class="n">01</span><strong>Show your reasoning</strong><span class="m">Explainability</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st1" aria-selected="false" aria-controls="sp1" tabindex="-1"><span class="n">02</span><strong>Fail loudly, never silently</strong><span class="m">Reliability</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st2" aria-selected="false" aria-controls="sp2" tabindex="-1"><span class="n">03</span><strong>Tune for signal, not volume</strong><span class="m">Signal over noise</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st3" aria-selected="false" aria-controls="sp3" tabindex="-1"><span class="n">04</span><strong>Test the claims</strong><span class="m">Verification</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st4" aria-selected="false" aria-controls="sp4" tabindex="-1"><span class="n">05</span><strong>Write it down so others can run it</strong><span class="m">Handover</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st5" aria-selected="false" aria-controls="sp5" tabindex="-1"><span class="n">06</span><strong>Private by default</strong><span class="m">Privacy</span><i class="fill"></i></button>
       </div>
       <div class="stage-pane active" role="tabpanel" id="sp0" aria-labelledby="st0">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1566 · Phishing</div><h3>Initial access</h3><p>A convincing “invoice” email lands, linking to a fake Microsoft sign-in page.</p><div class="goal"><small>Their goal</small>Get a foothold</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Email and URL-click telemetry flags the lure before most users have even seen it.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Office 365</span><span class="chip">URL click logs</span><span class="chip">Sentinel</span></div><ul class="resp"><li>Quarantine and purge the message</li><li>Block the sender and the URL</li><li>Warn the people who clicked</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 01</div><h3>Show your reasoning</h3><p>A verdict nobody can audit is just an opinion. Whatever I build should be able to explain why it decided what it did.</p><div class="test"><small>The test</small>Could a reviewer see why it decided that?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>TFII shows its work on every indicator</h3><p>A threat-intel platform where confidence isn't one opaque score from one feed.</p><div class="tags" style="margin-top:14px"><span class="chip">TFII</span><span class="chip">Python · FastAPI</span><span class="chip">STIX / TAXII</span></div><ul class="resp"><li>Independent sources are corroborated — and an aggregator is never double-counted</li><li>Locations are labelled for what they are: IP location, CDN edge, TLD registry, registrant country</li><li>Every indicator page spells out the reasoning behind its confidence</li></ul><a class="plink" href="https://github.com/sherifrahim/TFII" target="_blank" rel="noopener">View TFII <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       </div>
       <div class="stage-pane" role="tabpanel" id="sp1" aria-labelledby="st1">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1078 · Credential replay</div><h3>Valid accounts</h3><p>Harvested credentials are replayed from an unfamiliar country — down a legacy path with no MFA prompt.</p><div class="goal"><small>Their goal</small>Look like a real user</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Sign-in risk signals stand out sharply against the user's normal pattern of life.</p><div class="tags" style="margin-top:14px"><span class="chip">Entra ID sign-ins</span><span class="chip">Identity Protection</span><span class="chip">Conditional Access</span></div><ul class="resp"><li>Revoke sessions on the spot</li><li>Force a password and MFA reset</li><li>Close the legacy-auth gap for good</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 02</div><h3>Fail loudly, never silently</h3><p>A control that quietly stops working is worse than one that was never there. Failure should be visible, specific and actionable.</p><div class="test"><small>The test</small>What happens when this breaks at 3 a.m.?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>From Kestrel's engine to Sentinel's connectors</h3><p>In Kestrel every action declares what to do when it can't run — skip, queue, degrade or fail — and says so plainly. At work, the same habit keeps monitoring honest.</p><div class="tags" style="margin-top:14px"><span class="chip">Kestrel</span><span class="chip">Connector health</span><span class="chip">Log Analytics</span></div><ul class="resp"><li>Kestrel surfaces blocked steps as clear, actionable states instead of silent no-ops</li><li>Validating connector health, ingestion status and data quality across client environments</li><li>So “no alerts” never quietly means “no data”</li></ul><a class="plink" href="https://github.com/sherifrahim/kestrel" target="_blank" rel="noopener">View Kestrel <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       </div>
       <div class="stage-pane" role="tabpanel" id="sp2" aria-labelledby="st2">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1059.001 · PowerShell</div><h3>Execution</h3><p>A macro launches PowerShell with an encoded payload to fetch the next stage.</p><div class="goal"><small>Their goal</small>Run code quietly</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Endpoint process telemetry shows an Office app spawning PowerShell — rarely legitimate, easy to spot.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Endpoint</span><span class="chip">Process events</span><span class="chip">KQL analytics rule</span></div><ul class="resp"><li>Isolate the device</li><li>Collect an investigation package</li><li>Hunt the same pattern across the fleet</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 03</div><h3>Tune for signal, not volume</h3><p>More data isn't more security. The goal is the smallest pipeline that still catches what matters.</p><div class="test"><small>The test</small>Does this alert earn its place in the queue?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>30–40% less ingestion, same detection coverage</h3><p>Filtering low-value events and tuning connectors across multiple client tenants at Ansen Technologies.</p><div class="tags" style="margin-top:14px"><span class="chip">Microsoft Sentinel</span><span class="chip">KQL</span><span class="chip">Workbooks</span></div><ul class="resp"><li>Monthly log ingestion down 30–40% without impacting detection coverage</li><li>KQL analytics rules and hunting queries tuned to raise alert fidelity and cut false positives</li><li>A weekly Sentinel workbook that tracks ingestion volume and cost by source</li></ul><a class="plink" href="https://github.com/sherifrahim/Sentinel-Workbooks" target="_blank" rel="noopener">View the workbook <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       </div>
       <div class="stage-pane" role="tabpanel" id="sp3" aria-labelledby="st3">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1003.001 · LSASS dump</div><h3>Credential access</h3><p>LSASS memory is dumped through a trusted system DLL, so no tooling ever touches disk.</p><div class="goal"><small>Their goal</small>Steal more identities</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>A living-off-the-land trick — but the command line and the target process give it away.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Endpoint alerts</span><span class="chip">Command-line telemetry</span><span class="chip">Custom detection</span></div><ul class="resp"><li>Isolate and contain</li><li>Reset every exposed credential</li><li>Review privileged access with PIM</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 04</div><h3>Test the claims</h3><p>If something says it works, something should fail when it stops being true — code and documentation alike.</p><div class="test"><small>The test</small>Would a test fail if the explanation were wrong?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>CertPrep's 534 tests — including the teaching copy</h3><p>An exam-prep platform where the content is held to the same standard as the code.</p><div class="tags" style="margin-top:14px"><span class="chip">CertPrep</span><span class="chip">Vitest</span><span class="chip">Next.js</span></div><ul class="resp"><li>Where the lab shows an explanation beside a worked example, a test asserts the engine really agrees with it</li><li>Spotted a 93% answer-position bias in the question bank — then randomised and enforced a fix</li><li>Content validation runs alongside the unit tests</li></ul><a class="plink" href="https://github.com/sherifrahim/CertPrep" target="_blank" rel="noopener">View CertPrep <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       </div>
       <div class="stage-pane" role="tabpanel" id="sp4" aria-labelledby="st4">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1021 · Remote services</div><h3>Lateral movement</h3><p>A service account starts logging on to hosts it has never touched before.</p><div class="goal"><small>Their goal</small>Reach what matters</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Service accounts have a predictable footprint — so any deviation is loud once identity and endpoint data are joined up.</p><div class="tags" style="margin-top:14px"><span class="chip">Windows logon events</span><span class="chip">Entra ID</span><span class="chip">Sentinel correlation</span></div><ul class="resp"><li>Disable and rotate the account</li><li>Scope the blast radius</li><li>Tighten its logon rights</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 05</div><h3>Write it down so others can run it</h3><p>A system only one person understands is a liability. Handover quality is part of the engineering.</p><div class="test"><small>The test</small>Could someone else run this without me?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>Runbooks, playbooks and a team lab</h3><p>Documentation as a deliverable, not an afterthought.</p><div class="tags" style="margin-top:14px"><span class="chip">Runbooks</span><span class="chip">Playbooks</span><span class="chip">Splunk lab</span></div><ul class="resp"><li>Authored SOC engineering documentation, detection playbooks, onboarding procedures and runbooks to standardise deployments</li><li>Built a shared Splunk lab so L1/L2 analysts can practise outside production</li><li>A full government SOC delivered with zero post-deployment rework</li></ul></div>
       </div>
       <div class="stage-pane" role="tabpanel" id="sp5" aria-labelledby="st5">
-        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1041 · Over C2 channel</div><h3>Exfiltration</h3><p>Data starts leaving for an external endpoint in unusually large transfers.</p><div class="goal"><small>Their goal</small>Take the data and go</div></div>
-        <div class="vs"><span>VS</span></div>
-        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Egress volume, firewall logs and DLP policy all get a vote — and together they rarely miss.</p><div class="tags" style="margin-top:14px"><span class="chip">Azure Firewall logs</span><span class="chip">Purview DLP</span><span class="chip">Network telemetry</span></div><ul class="resp"><li>Block egress at the edge</li><li>Preserve the evidence</li><li>Write it up and close the gaps</li></ul></div>
+        <div class="side pri"><div class="kick"><svg class="icon"><use href="#i-sparkle"/></svg>Principle 06</div><h3>Private by default</h3><p>Collect only what's needed, keep it where it's yours, and make the safe path the default one.</p><div class="test"><small>The test</small>Does this data need to leave the device at all?</div></div>
+        <div class="vs"><span>IN PRACTICE</span></div>
+        <div class="side proof"><div class="kick"><svg class="icon"><use href="#i-check"/></svg>Where I've done it</div><h3>GetFit, Ledger and TFII keep your data yours</h3><p>Privacy shows up as defaults, not settings.</p><div class="tags" style="margin-top:14px"><span class="chip">GetFit</span><span class="chip">Ledger</span><span class="chip">TFII</span></div><ul class="resp"><li>GetFit: no account, no analytics, no cloud sync — and Android backup switched off</li><li>Ledger: offline-first by design, with no cloud dependency</li><li>TFII: no telemetry, and each user's API keys are encrypted at rest and visible only to them</li></ul><a class="plink" href="https://github.com/sherifrahim/GetFitPro" target="_blank" rel="noopener">View GetFit <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       </div>
       <div class="chain-foot">
-        <span>Every stage mapped to a technique, every technique to a signal — and the noise trade-off kept honest.</span>
+        <span>Pulled straight from my own repos and my day job — every claim has something real behind it.</span>
         <button class="play" id="chain-play" type="button" aria-pressed="true"><svg class="icon"><use href="#i-play"/></svg><span>Pause</span></button>
       </div>
     </div>

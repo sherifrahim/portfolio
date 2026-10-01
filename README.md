@@ -1,6 +1,6 @@
 # Sherif Rahim — Portfolio
 
-Personal portfolio for a SOC & Security Engineer. A single static page with a cinematic feel: title-card intro, a pinned scroll-scrubbed "reel" with real jump cuts, zoom punches, whip-pans and an iris wipe, plus a live SOC console, an interactive intrusion walkthrough and a command palette.
+Personal portfolio for a SOC & Security Engineer. A single static page with a cinematic feel: title-card intro, a pinned scroll-scrubbed "reel" with real jump cuts, zoom punches, whip-pans and an iris wipe, plus an animated career-path card, an interactive "principles" section and a command palette.
 
 **No framework, no build step, no trackers, no third-party requests.** Plain HTML, CSS and vanilla JS, with fonts self-hosted — so it deploys to GitHub Pages as-is.
 
@@ -48,10 +48,9 @@ Respects `prefers-reduced-motion` (no intro, static reel, no grain animation). W
 - Everything lives in `index.html` — experience, projects, certifications, skills.
 - Keyboard-palette entries (`Ctrl/⌘ + K`) are the `commands` array in `assets/js/main.js`.
 - Colours and type are CSS variables at the top of `assets/css/styles.css`.
-- The six intrusion stages are plain HTML panes in the `#detection` section; the live feed events are the `EVENTS` array in `assets/js/main.js`.
+- The six engineering principles are plain HTML panes in the `#principles` section; the career-path card is the `#path` list in the hero.
 
 ## Notes
 
 - The contact email is never in the HTML or JS as plain text; it is rebuilt at runtime and only shown when a visitor clicks **Reveal my email**.
-- The hero console and incident feed are fictional demo data.
 - Project screenshots are from the respective repositories' own READMEs.

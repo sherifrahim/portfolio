@@ -1,9 +1,9 @@
 /* ==========================================================================
    Sherif Rahim — portfolio
    Vanilla JS, no dependencies. Sections:
-   utils · theme · intro · hero (role cuts, SOC console, network)
+   utils · theme · intro · hero (role cuts, career-path card, network)
    · scroll engine (reel cuts, dolly, zoom, timeline, HUD) · reveals · tilt/magnetic
-   · detection tabs · projects (filter, screenshots, lightbox) · palette · misc
+   · principles walkthrough · projects (filter, screenshots, lightbox) · palette · misc
    ========================================================================== */
 (function () {
   "use strict";
@@ -76,9 +76,9 @@
     var boot = $("#boot"), pct = $("#intro-pct"), flash = $(".flash", intro);
     var lines = [
       "> <b>init</b> soc.environment",
-      "> loading detection content ........ <span class='ok'>ok</span>",
-      "> onboarding telemetry sources ..... <span class='ok'>ok</span>",
-      "> correlating signals ............... <span class='ok'>ok</span>",
+      "> loading experience ................ <span class='ok'>ok</span>",
+      "> loading projects .................. <span class='ok'>ok</span>",
+      "> loading principles ................ <span class='ok'>ok</span>",
       "> <b>all systems nominal</b>"
     ];
     var start = performance.now(), dur = 1500, shown = 0, finished = false;
@@ -131,29 +131,12 @@
     }, 2300);
   }
 
-  /* Live SOC console: a rolling, entirely fictional incident feed */
-  var EVENTS = [
-    ["high", "High", "Impossible-travel sign-in", "Entra ID", "Session revoked"],
-    ["med", "Med", "Encoded PowerShell from Office", "Defender XDR", "Device isolated"],
-    ["low", "Info", "Noisy connector tuned", "Microsoft Sentinel", "Ingestion trimmed"],
-    ["high", "High", "Phishing link clicked", "Defender for Office 365", "Mail purged"],
-    ["med", "Med", "Privileged role used off-hours", "PIM", "Access reviewed"],
-    ["low", "Info", "Connector heartbeat restored", "Log Analytics", "Healthy again"],
-    ["high", "High", "Credential-dump attempt", "Defender for Endpoint", "Contained"],
-    ["med", "Med", "Unusual outbound transfer", "Azure Firewall", "Blocked"]
-  ];
-  function socFeed() {
-    var feed = $("#soc-feed");
-    if (!feed || reduced) return;
-    var i = 3;
-    setInterval(function () {
-      if (document.hidden || !netOn) return;
-      var e = EVENTS[i++ % EVENTS.length];
-      var row = document.createElement("div"); row.className = "frow new";
-      row.innerHTML = '<span class="sev ' + e[0] + '">' + e[1] + '</span><span class="ft">' + esc(e[2]) + "<small>" + esc(e[3]) + '</small></span><span class="state">' + esc(e[4]) + "</span>";
-      feed.insertBefore(row, feed.firstChild);
-      while (feed.children.length > 3) feed.removeChild(feed.lastChild);
-    }, 2600);
+  /* Career-path card: nodes light up one after another */
+  function pathReveal() {
+    var path = $("#path"); if (!path) return;
+    var items = $$("li", path);
+    path.classList.add("go");
+    items.forEach(function (li, i) { if (reduced) li.classList.add("show"); else setTimeout(function () { li.classList.add("show"); }, 380 + i * 340); });
   }
 
   function startHero() {
@@ -162,7 +145,7 @@
     var g = $("#hero-grid");
     if (g && !reduced) { g.classList.add("pull"); g.addEventListener("animationend", function () { g.classList.remove("pull"); }, { once: true }); }
     $$("#hero-grid .reveal").forEach(function (el) { el.classList.add("in"); });
-    socFeed();
+    pathReveal();
     roleCuts();
     setTimeout(function () { $$("#hero-grid .reveal").forEach(function (el) { el.classList.add("settled"); }); }, 1500);
   }
@@ -223,9 +206,9 @@
   }
 
   /* ---------- hero terminal tilt + cursor glow ---------- */
-  var term = $("#soc");
+  var term = $("#me");
   if (term && finePointer && !reduced) {
-    var tw = $(".soc-wrap");
+    var tw = $(".me-wrap");
     tw.addEventListener("pointermove", function (e) {
       var r = tw.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
@@ -420,7 +403,7 @@
   });
 
   /* ======================================================================
-     DETECTION — intrusion walkthrough (stage tabs, auto-play, cuts)
+     PRINCIPLES — walkthrough (tabs, auto-play, cuts)
      ====================================================================== */
   var stages = $$("#chain .stage"), panes = $$("#chain .stage-pane"), chain = $("#chain"), playBtn = $("#chain-play");
   var curStage = 0, playing = !reduced, chainInView = false, chainTimer;
@@ -516,7 +499,7 @@
     { g: "Navigate", t: "The Reel", i: "i-play", k: "what i do showreel", run: go("reel") },
     { g: "Navigate", t: "About", i: "i-shield", k: "bio summary", run: go("about") },
     { g: "Navigate", t: "Experience", i: "i-layers", k: "work jobs timeline", run: go("experience") },
-    { g: "Navigate", t: "Detection — follow the intruder", i: "i-shield", k: "detection engineering intrusion attack chain mitre kql", run: go("detection") },
+    { g: "Navigate", t: "How I build — principles", i: "i-sparkle", k: "principles engineering approach values detection", run: go("principles") },
     { g: "Navigate", t: "Projects", i: "i-code", k: "work github", run: go("projects") },
     { g: "Navigate", t: "Toolkit", i: "i-database", k: "skills stack", run: go("skills") },
     { g: "Navigate", t: "Certifications", i: "i-award", k: "sc-200 security+ cpt", run: go("certs") },
