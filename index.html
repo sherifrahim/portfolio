@@ -1,529 +1,681 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <title>Sherif Rahim</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
-
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
-  <link href="favicon.ico" rel="shortcut icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sherif Rahim — SOC &amp; Security Engineer</title>
+<meta name="description" content="Sherif Rahim is a SOC & Security Engineer in Abu Dhabi specialising in Microsoft Sentinel, Defender XDR, KQL detection engineering, telemetry pipelines and threat hunting.">
+<meta name="author" content="Sherif Rahim">
+<meta name="theme-color" content="#06080c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sherif Rahim — SOC & Security Engineer">
+<meta property="og:description" content="Building SOCs that detect what matters. Microsoft Sentinel · Defender XDR · KQL · Threat Hunting.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  /* Theme + no-js flag before first paint */
+  (function () {
+    var d = document.documentElement;
+    try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {}
+    d.classList.add("js");
+  })();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Sherif Rahim","jobTitle":"SOC & Security Engineer","worksFor":{"@type":"Organization","name":"Ansen Technologies"},"address":{"@type":"PostalAddress","addressLocality":"Abu Dhabi","addressCountry":"AE"},"sameAs":["https://github.com/sherifrahim","https://www.linkedin.com/in/sherifrahim","https://medium.com/@sherifrahim"],"knowsAbout":["Microsoft Sentinel","Microsoft Defender XDR","KQL","Detection Engineering","Threat Hunting","SIEM"]}
+</script>
 </head>
 
 <body>
-  <div id="preloader"></div>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}#intro{display:none!important}.term-results .row{opacity:1!important;transform:none!important}.role .wipe,.contact-card{clip-path:none!important}.contact-card h2{opacity:1!important;filter:none!important;transform:none!important}.bar i{transform:none!important}.timeline::before,.role::before{transform:none!important}.reel-head,.reel-progress,.reel-ticks,.reel-title{display:none!important}.credits{height:auto!important}.credits-roll{position:static!important;animation:none!important;padding:40px 0}.browser-view .zoomer{transform:none!important}.code-pane .ln{opacity:1!important}</style></noscript>
 
-  <!--==========================
-  Hero Section
-  ============================-->
-  <section id="hero">
-    <div class="hero-container">
-      <div class="wow fadeIn">
-        <div class="hero-logo">
-          <img class="" src="img/logo.png" alt="Sherif Rahim">
-        </div>
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-crosshair" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-cmd" viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+  </defs>
+</svg>
 
-        <h1>Welcome to My Personal Portfolio</h1>
-        <h2>I'm a <span class="rotating">B.Tech Undergraduate Student studying at KMEA Engineering College, A Tech Aspirant, A part time AOSP Developer, Hodophile</span></h2>
-        <div class="actions">
-          <a href="#about" class="btn-get-started">Get Strated</a>
-          <a href="#achievements" class="btn-achievements">My Achievements+Skills</a>
-        </div>
+<a class="skip-link" href="#about">Skip to content</a>
+
+<!-- ======================= INTRO / TITLE CARD ======================= -->
+<div id="intro" aria-hidden="true">
+  <div class="curtain t"></div><div class="curtain b"></div>
+  <div class="bar t"></div><div class="bar b"></div>
+  <div class="stage">
+    <div class="boot" id="boot"></div>
+    <div class="count"><span id="intro-pct">000</span><small>%</small></div>
+    <div class="title">
+      <div>
+        <span class="sub">SOC &amp; Security Engineer</span>
+        <h2>Sherif Rahim</h2>
+        <span class="rule"></span>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="flash"></div>
+  <button class="skip" id="intro-skip" type="button">Skip intro ↵</button>
+</div>
 
-  <!--==========================
-  Header Section
-  ============================-->
-  <header id="header">
-    <div class="container">
+<!-- Ambient cinematic layers -->
+<div id="scroll-progress"></div>
+<div class="bg-grid"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+<div class="film" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="cine-bar t" aria-hidden="true"></div>
+<div class="cine-bar b" aria-hidden="true"></div>
+<div class="hud" aria-hidden="true"><span class="rec">REC</span><span class="tc" id="hud-tc">00:00:00:00</span><span class="sc" id="hud-sc">SC 01 · HOME</span></div>
 
-      <div id="logo" class="pull-left">
-        <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Header 1</a></h1>-->
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="brand" aria-label="Sherif Rahim — home"><span class="brand-mark">SR</span><span>Sherif Rahim</span></a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#reel" data-spy="reel">Reel</a>
+      <a href="#about" data-spy="about">About</a>
+      <a href="#experience" data-spy="experience">Experience</a>
+      <a href="#detection" data-spy="detection">Detection</a>
+      <a href="#projects" data-spy="projects">Projects</a>
+      <a href="#skills" data-spy="skills">Skills</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="kbd-btn" id="open-palette" type="button" aria-label="Open command menu"><svg class="icon"><use href="#i-search"/></svg><span class="lbl">Search</span><kbd>Ctrl K</kbd></button>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme"><svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="home" data-scene="Home">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-grid" id="hero-grid">
+      <div class="hero-copy">
+        <span class="pill reveal" style="--d:.05s"><span class="dot"></span>Currently SOC &amp; Security Engineer @ Ansen Technologies</span>
+        <h1 aria-label="I build SOCs that detect what matters.">
+          <span class="line"><span>I build SOCs</span></span>
+          <span class="line"><span class="grad-text glitch" data-text="that detect">that detect</span></span>
+          <span class="line"><span>what matters.</span></span>
+        </h1>
+        <div class="hero-role reveal" style="--d:.25s" aria-live="off"><span class="slashes">//</span><span class="cut" id="role">SOC &amp; Security Engineer</span></div>
+        <p class="hero-lead reveal" style="--d:.35s">Security engineer working across <strong>Microsoft Sentinel, Defender XDR and Entra ID</strong> — building detection, telemetry pipelines and threat-hunting capability for enterprise and government clients. Delivered a full government SOC with <strong>zero post-deployment rework</strong>.</p>
+        <div class="hero-cta reveal" style="--d:.45s">
+          <a class="btn btn-primary magnetic" href="#projects">See my work <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost magnetic" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-meta reveal" style="--d:.55s">
+          <span><svg class="icon"><use href="#i-pin"/></svg>Abu Dhabi, UAE</span>
+          <span><svg class="icon"><use href="#i-award"/></svg>SC-200 · Security+ · CPT</span>
+          <span><svg class="icon"><use href="#i-github"/></svg>github.com/sherifrahim</span>
+        </div>
       </div>
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#quotes">Quotes</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="menu-has-children"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact Us</a></li>
+      <div class="terminal-wrap reveal" style="--d:.3s">
+        <div class="float-card b" aria-hidden="true"><small>Ingestion cost</small><b class="grad-text">−30–40%</b>
+          <svg class="spark" viewBox="0 0 96 30" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 14,8 26,5 38,12 50,14 62,20 74,22 94,26"/></svg></div>
+        <div class="terminal" id="terminal">
+          <div class="term-bar"><i></i><i></i><i></i><span>Microsoft Sentinel · Advanced hunting</span></div>
+          <div class="term-body"><pre id="term-code" aria-label="Example KQL query">SigninLogs
+| where TimeGenerated &gt; ago(1h)
+| where ResultType in ("50126", "50053")
+| summarize Failures = count() by UserPrincipalName, IPAddress
+| where Failures &gt; 10</pre></div>
+          <div class="term-results" id="term-results" aria-label="Example results (demo data)">
+            <div class="row head"><span>User</span><span>Source IP</span><span>Fails</span><span>Sev</span></div>
+            <div class="row"><span>a.khan@contoso.com</span><span>203.0.113.42</span><span>212</span><span class="sev high">High</span></div>
+            <div class="row"><span>svc-backup@contoso.com</span><span>198.51.100.7</span><span>64</span><span class="sev med">Med</span></div>
+            <div class="row"><span>m.lopez@contoso.com</span><span>192.0.2.119</span><span>17</span><span class="sev low">Low</span></div>
+          </div>
+        </div>
+        <div class="float-card a" aria-hidden="true"><small>Critical infra onboarded</small><b>4 days <span style="font-size:.9rem;color:var(--faint);font-weight:500">vs 10</span></b></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal snap" style="--d:.0s"><div class="num"><span class="count" data-to="4">0</span><sub>days</sub></div><p>Critical infrastructure onboarded against a 10-day scope</p></div>
+      <div class="stat reveal snap" style="--d:.12s"><div class="num"><span class="count" data-to="30">0</span>–<span class="count" data-to="40">0</span><sub>%</sub></div><p>Monthly log-ingestion reduction across client tenants, detection coverage intact</p></div>
+      <div class="stat reveal snap" style="--d:.24s"><div class="num"><span class="count" data-to="0">0</span></div><p>Post-deployment rework on a full government SOC build</p></div>
+      <div class="stat reveal snap" style="--d:.36s"><div class="num"><span class="count" data-to="4">0</span><sup>+2</sup></div><p>Certifications earned, with SC-500 and SC-401 in progress</p></div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<!-- ======================= MARQUEE ======================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee-track">
+    <span>Microsoft Sentinel</span><span>Defender XDR</span><span>Entra ID</span><span>KQL</span><span>Azure Monitor</span><span>Splunk</span><span>Wazuh</span><span>IBM QRadar</span><span>ELK Stack</span><span>MITRE ATT&amp;CK</span><span>Sigma</span><span>Purview DLP</span><span>Nessus</span><span>Qualys</span>
+    <span>Microsoft Sentinel</span><span>Defender XDR</span><span>Entra ID</span><span>KQL</span><span>Azure Monitor</span><span>Splunk</span><span>Wazuh</span><span>IBM QRadar</span><span>ELK Stack</span><span>MITRE ATT&amp;CK</span><span>Sigma</span><span>Purview DLP</span><span>Nessus</span><span>Qualys</span>
+  </div>
+</div>
+
+<!-- ======================= THE REEL (pinned jump cuts) ======================= -->
+<section class="reel" id="reel" data-scene="Reel" aria-labelledby="reel-h">
+  <h2 class="sr-only" id="reel-h">What I do — a four-shot reel</h2>
+  <div class="reel-track" id="reel-track">
+    <div class="reel-stage">
+      <div class="reel-head"><div class="container"><span class="rec">Rec</span><span class="tc" id="reel-tc">00:00:00:00</span><span id="reel-shotno">Shot 01 / 04</span></div></div>
+      <div class="shots">
+
+        <article class="shot active" data-cut="flash" style="--hue:#34d3c0;--gx:72%">
+          <div class="shot-bg"><div class="ghost" aria-hidden="true">01</div><div class="ghost-code" aria-hidden="true">SecurityAlert
+| where AlertSeverity in ("High","Medium")
+| summarize count() by AlertName, bin(TimeGenerated, 1h)
+| where count_ &gt; 5
+| join kind=leftanti (Watchlist) on AlertName</div></div>
+          <div class="container">
+            <div>
+              <div class="shot-no">Shot 01 · Detection</div>
+              <h3 class="shot-word">Detect<em>.</em></h3>
+              <p class="shot-copy">KQL <strong>analytics rules, hunting queries and dashboards</strong> tuned against real identity, endpoint and cloud attack scenarios — higher alert fidelity, fewer false positives for the analysts who live in the queue.</p>
+            </div>
+            <aside class="shot-evidence"><small>Stack</small><b>KQL</b><p>Sentinel Analytics · Sigma · Defender XDR advanced hunting</p><div class="tags"><span class="chip">Analytics rules</span><span class="chip">Hunting</span><span class="chip">Workbooks</span></div></aside>
+          </div>
+        </article>
+
+        <article class="shot" data-cut="zoom" style="--hue:#5aa9ff;--gx:30%">
+          <div class="shot-bg"><div class="ghost" aria-hidden="true">02</div><div class="ghost-code" aria-hidden="true">Azure Monitor Agent
+  → Data Collection Rule
+    → Log Analytics Workspace
+      → Microsoft Sentinel
+
+identity · endpoint · cloud · network</div></div>
+          <div class="container">
+            <div>
+              <div class="shot-no">Shot 02 · Telemetry</div>
+              <h3 class="shot-word">Connect<em>.</em></h3>
+              <p class="shot-copy">End-to-end <strong>telemetry pipelines</strong> through Azure Monitor Agent, DCRs and native connectors — then continuous checks on connector health and data quality so monitoring never silently breaks.</p>
+            </div>
+            <aside class="shot-evidence"><small>Critical infrastructure onboarded</small><b>4 days</b><p>against a 10-day scope, with zero post-deployment rework.</p></aside>
+          </div>
+        </article>
+
+        <article class="shot" data-cut="whip" style="--hue:#a78bfa;--gx:68%">
+          <div class="shot-bg"><div class="ghost" aria-hidden="true">03</div><div class="ghost-code" aria-hidden="true">T1110  Brute Force
+T1059  Command &amp; Scripting Interpreter
+T1003  OS Credential Dumping
+T1021  Remote Services
+T1041  Exfiltration Over C2 Channel</div></div>
+          <div class="container">
+            <div>
+              <div class="shot-no">Shot 03 · Hunting</div>
+              <h3 class="shot-word">Hunt<em>.</em></h3>
+              <p class="shot-copy">Proactive <strong>threat hunting and threat intelligence</strong> — IOC validation, malware analysis and vulnerability assessment, mapped to MITRE ATT&amp;CK and feeding straight into incident response and containment.</p>
+            </div>
+            <aside class="shot-evidence"><small>Framework</small><b>ATT&amp;CK</b><p>Every detection mapped to a technique, every hunt to a hypothesis.</p><div class="tags"><span class="chip">IOC triage</span><span class="chip">CTI</span><span class="chip">IR</span></div></aside>
+          </div>
+        </article>
+
+        <article class="shot" data-cut="iris" style="--hue:#fbbf24;--gx:35%">
+          <div class="shot-bg"><div class="ghost" aria-hidden="true">04</div><div class="ghost-code" aria-hidden="true">Usage
+| where IsBillable == true
+| summarize GB = sum(Quantity) / 1000 by DataType
+| top 10 by GB desc
+| render barchart</div></div>
+          <div class="container">
+            <div>
+              <div class="shot-no">Shot 04 · Optimise</div>
+              <h3 class="shot-word">Tune<em>.</em></h3>
+              <p class="shot-copy">Filtering low-value events and tuning data connectors to cut spend — <strong>without giving up detection coverage</strong>. Security that scales across multi-client SLAs and stays affordable to run.</p>
+            </div>
+            <aside class="shot-evidence"><small>Monthly ingestion</small><b>−30–40%</b><p>across multiple client tenants.</p></aside>
+          </div>
+        </article>
+
+      </div>
+      <div class="reel-flash" id="reel-flash"></div>
+      <div class="reel-title" aria-hidden="true">Scroll to cut</div>
+      <div class="reel-ticks" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="reel-progress" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section id="about" data-scene="About">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">01 — About</span><h2>Attacker-aware, <span class="grad-text">analyst-first.</span></h2></div>
+    <div class="about-grid">
+      <div class="about-copy reveal" style="--d:.1s">
+        <p>I'm a <strong>Security Engineer</strong> who builds and operates enterprise and government SOC environments. My core is the <strong>Microsoft security stack</strong> — Sentinel, Defender XDR and Entra ID — across Azure and hybrid estates.</p>
+        <p>I like the engineering half of security: onboarding log sources properly, writing <strong>KQL</strong> that holds up in production, and tuning noise out of the pipeline so analysts spend their time on the alerts that matter.</p>
+        <p>My background in penetration testing and SOC internships gives me the attacker's view of the same environment — which is what makes a detection actually useful.</p>
+        <div class="about-facts">
+          <div class="fact"><svg class="icon"><use href="#i-pin"/></svg>Based in Abu Dhabi, United Arab Emirates</div>
+          <div class="fact"><svg class="icon"><use href="#i-layers"/></svg>Multi-client SOC delivery under SLAs</div>
+          <div class="fact"><svg class="icon"><use href="#i-cap"/></svg>B.Tech Computer Science &amp; Engineering, KTU</div>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="card pillar reveal" style="--d:.1s"><div class="ico"><svg class="icon"><use href="#i-crosshair"/></svg></div><h3>Detection engineering</h3><p>KQL analytics rules, hunting queries and Sigma content tuned for fidelity, not volume.</p></div>
+        <div class="card pillar reveal" style="--d:.2s"><div class="ico"><svg class="icon"><use href="#i-database"/></svg></div><h3>SIEM &amp; telemetry</h3><p>Log-source onboarding, AMA/DCR pipelines, connector health and ingestion-cost control.</p></div>
+        <div class="card pillar reveal" style="--d:.3s"><div class="ico"><svg class="icon"><use href="#i-radar"/></svg></div><h3>Hunting &amp; intel</h3><p>Hypothesis-led hunts, IOC validation and ATT&amp;CK mapping that feed incident response.</p></div>
+        <div class="card pillar reveal" style="--d:.4s"><div class="ico"><svg class="icon"><use href="#i-lock"/></svg></div><h3>Identity &amp; posture</h3><p>Entra ID, PIM, Defender for Endpoint/Cloud and Purview DLP administration and review.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EXPERIENCE ======================= -->
+<section id="experience" data-scene="Experience" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">02 — Experience</span><h2>Where I've <span class="grad-text">shipped.</span></h2><p>From SOC internships to building production SOCs for government clients.</p></div>
+    <div class="timeline" id="timeline">
+
+      <article class="role current watch">
+        <div class="card wipe">
+          <div class="slate"><i></i>Scene 01 · Now</div>
+          <div class="role-head"><h3>SOC and Security Engineer</h3><span class="when">Jun 2025 – Present</span></div>
+          <p class="org"><b>Ansen Technologies</b> (formerly Anxinsec) · Abu Dhabi, UAE</p>
+          <ul>
+            <li>Built and deployed production <strong>SOC environments</strong> for enterprise and government clients on <strong>Microsoft Sentinel</strong> — delivering a full government SOC with <strong>zero post-deployment rework</strong> and onboarding critical infrastructure in <strong>4 days</strong> against a 10-day scope.</li>
+            <li>Engineered <strong>end-to-end telemetry pipelines</strong> for identity, endpoint, cloud and network logs using <strong>Azure Monitor, Log Analytics, AMA, Data Collection Rules</strong> and native connectors.</li>
+            <li>Developed and tuned <strong>KQL analytics rules, hunting queries, dashboards and Sentinel Analytics</strong>, improving alert fidelity while cutting false positives.</li>
+            <li>Optimised SIEM performance by filtering low-value events and tuning connectors — <strong>reducing monthly ingestion 30–40%</strong> across client tenants without hurting detection coverage.</li>
+            <li>Administered and secured <strong>Defender XDR, Defender for Endpoint, Entra ID, Purview DLP</strong> and Azure security services.</li>
+          </ul>
+          <div class="role-more"><div><ul style="margin-top:10px">
+            <li>Performed proactive <strong>threat hunting and threat intelligence</strong> — IOC validation, malware analysis and vulnerability assessment using the <strong>MITRE ATT&amp;CK</strong> framework, supporting incident response and containment.</li>
+            <li>Reviewed privileged access via <strong>Privileged Identity Management (PIM)</strong> to enforce controlled, auditable administrative access.</li>
+            <li>Investigated alerts and reviewed posture across <strong>Defender for Endpoint, Defender for Cloud and PIM</strong>.</li>
+            <li>Validated telemetry ingestion, <strong>connector health and data quality</strong> across multiple client environments.</li>
+            <li>Authored SOC engineering documentation, <strong>detection playbooks, onboarding procedures and runbooks</strong>.</li>
+          </ul></div></div>
+          <button class="more-btn" type="button" aria-expanded="false">Show more <svg class="icon"><use href="#i-chev"/></svg></button>
+          <div class="tags"><span class="chip hot">Microsoft Sentinel</span><span class="chip hot">KQL</span><span class="chip">Defender XDR</span><span class="chip">Entra ID</span><span class="chip">AMA / DCR</span><span class="chip">Purview DLP</span><span class="chip">MITRE ATT&amp;CK</span></div>
+        </div>
+      </article>
+
+      <article class="role past watch">
+        <div class="card wipe">
+          <div class="slate"><i></i>Scene 02</div>
+          <div class="role-head"><h3>IT Security and Support Engineer</h3><span class="when">Jan 2025 – Jun 2025</span></div>
+          <p class="org"><b>Virtual Team Information Technology</b> · Abu Dhabi, UAE</p>
+          <ul>
+            <li>Ran <strong>vulnerability assessments</strong> with Nessus, Defender XDR, WithSecure and Qualys across client environments, remediating findings and raising security posture.</li>
+            <li>Managed Linux and Windows servers, <strong>Active Directory</strong>, Microsoft 365, VPNs and endpoint protection while keeping uptime consistent.</li>
+            <li>Introduced <strong>workflow improvements</strong> across hardware, OS and network support that reduced average ticket resolution time.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role past watch">
+        <div class="card wipe">
+          <div class="slate"><i></i>Scene 03</div>
+          <div class="role-head"><h3>IT Support CS Agent</h3><span class="when">Sep 2023 – Sep 2024</span></div>
+          <p class="org"><b>Sutherland Global Services</b> (Amazon) · Kochi, India</p>
+          <ul>
+            <li>Administered <strong>Microsoft 365 and Active Directory</strong>, enforcing account policies, access controls and secure configurations across a large user base.</li>
+            <li>Troubleshot and hardened network and endpoint environments with <strong>Cisco tooling</strong>, meeting SLA targets through JIRA and ServiceNow.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role past watch">
+        <div class="card wipe">
+          <div class="slate"><i></i>Scene 04</div>
+          <div class="role-head"><h3>Cybersecurity Engineer Intern <span style="font-weight:400;color:var(--muted);font-size:.7em">(part-time)</span></h3><span class="when">Jan 2024 – Sep 2024</span></div>
+          <p class="org"><b>Ehackify Cybersecurity</b> · Kochi, India</p>
+          <p class="sub">Penetration Testing Intern — Jan to Mar 2024</p>
+          <ul><li>Conducted <strong>penetration tests and vulnerability assessments</strong> with Nmap, Burp Suite, Metasploit, OpenVAS and ZAP, aligned to the OWASP Top 10.</li></ul>
+          <p class="sub">SOC Intern — Apr to Jun 2024</p>
+          <ul>
+            <li>Hands-on with <strong>SIEM environments</strong> across Splunk, Wazuh and Microsoft Sentinel for detection engineering, log correlation and alert triage.</li>
+            <li>Supported <strong>SOC workflows and IR processes</strong> within NIST SP 800-61 and ISO 27001 frameworks.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role past watch">
+        <div class="card wipe">
+          <div class="slate"><i></i>Scene 05 · Opening shot</div>
+          <div class="role-head"><h3>SOC Intern</h3><span class="when">Jan 2023 – Jul 2023</span></div>
+          <p class="org"><b>CFSS Cyber Forensics Solutions</b> · Kochi, India</p>
+          <ul>
+            <li>Supported <strong>incident response and threat detection</strong> workflows using SIEM tooling across SOC monitoring operations.</li>
+            <li>Conducted <strong>vulnerability assessments and malware analysis</strong>, assisting with incident containment and investigation.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DETECTION ======================= -->
+<section id="detection" data-scene="Detection">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">03 — Detection engineering</span><h2>Queries I'd <span class="grad-text">actually ship.</span></h2><p>Illustrative KQL in the style I write for Sentinel and Defender XDR — sanitised examples, not client content.</p></div>
+    <div class="detect-grid reveal" style="--d:.1s">
+      <div class="detect-tabs" role="tablist" aria-label="Example detections">
+        <button class="dtab" role="tab" aria-selected="true" aria-controls="p0" id="t0"><span class="mitre">T1110 · Credential access</span><strong>Brute force → success</strong><span class="d">Many failures from one source followed by a successful sign-in within the hour.</span></button>
+        <button class="dtab" role="tab" aria-selected="false" aria-controls="p1" id="t1" tabindex="-1"><span class="mitre">T1059.001 · Execution</span><strong>Encoded PowerShell from Office</strong><span class="d">Office apps spawning PowerShell with encoded or base64 payloads.</span></button>
+        <button class="dtab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1"><span class="mitre">T1003.001 · Credential access</span><strong>LSASS dump via comsvcs.dll</strong><span class="d">MiniDump through rundll32 — a classic living-off-the-land credential theft.</span></button>
+        <button class="dtab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1"><span class="mitre">Cost · SIEM optimisation</span><strong>Where's the ingestion bill going?</strong><span class="d">Rank billable tables to find the low-value data worth filtering.</span></button>
+      </div>
+      <div class="code-panel">
+        <div class="code-top"><span id="code-title">brute-force-then-success.kql</span><button class="copy" id="copy-code" type="button"><svg class="icon"><use href="#i-copy"/></svg><span>Copy</span></button></div>
+
+<div class="code-pane active" role="tabpanel" id="p0" aria-labelledby="t0" data-file="brute-force-then-success.kql"><pre><code class="kql">// Brute force followed by a successful sign-in  ·  T1110
+let successWindow = 1h;
+let failures =
+    SigninLogs
+    | where TimeGenerated &gt; ago(24h)
+    | where ResultType in ("50126", "50053", "50057")
+    | summarize FailedCount = count(), FirstFail = min(TimeGenerated)
+        by UserPrincipalName, IPAddress
+    | where FailedCount &gt;= 10;
+failures
+| join kind=inner (
+    SigninLogs
+    | where TimeGenerated &gt; ago(24h)
+    | where ResultType == 0
+    | project SuccessTime = TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName
+) on UserPrincipalName, IPAddress
+| where SuccessTime between (FirstFail .. (FirstFail + successWindow))
+| project UserPrincipalName, IPAddress, FailedCount, SuccessTime, AppDisplayName</code></pre></div>
+
+<div class="code-pane" role="tabpanel" id="p1" aria-labelledby="t1" data-file="encoded-powershell-from-office.kql"><pre><code class="kql">// Encoded PowerShell launched from an Office process  ·  T1059.001
+DeviceProcessEvents
+| where Timestamp &gt; ago(7d)
+| where FileName in~ ("powershell.exe", "pwsh.exe")
+| where ProcessCommandLine has_any ("-enc", "-EncodedCommand", "FromBase64String")
+| where InitiatingProcessFileName in~ ("winword.exe", "excel.exe", "outlook.exe")
+| project Timestamp, DeviceName, AccountName,
+          InitiatingProcessFileName, ProcessCommandLine
+| order by Timestamp desc</code></pre></div>
+
+<div class="code-pane" role="tabpanel" id="p2" aria-labelledby="t2" data-file="lsass-dump-comsvcs.kql"><pre><code class="kql">// LSASS memory dump through comsvcs.dll MiniDump  ·  T1003.001
+DeviceProcessEvents
+| where Timestamp &gt; ago(7d)
+| where FileName =~ "rundll32.exe"
+| where ProcessCommandLine has "comsvcs"
+    and ProcessCommandLine has_any ("MiniDump", "#24")
+| extend DumpTarget = extract(@"(?i)minidump\s+(\d+)", 1, ProcessCommandLine)
+| project Timestamp, DeviceName, AccountName, DumpTarget, ProcessCommandLine</code></pre></div>
+
+<div class="code-pane" role="tabpanel" id="p3" aria-labelledby="t3" data-file="ingestion-cost-audit.kql"><pre><code class="kql">// Where is the ingestion bill going?  ·  SIEM cost optimisation
+let totalGB = toscalar(
+    Usage
+    | where TimeGenerated &gt; ago(30d) and IsBillable == true
+    | summarize sum(Quantity) / 1000
+);
+Usage
+| where TimeGenerated &gt; ago(30d)
+| where IsBillable == true
+| summarize BillableGB = round(sum(Quantity) / 1000, 2) by DataType
+| top 10 by BillableGB desc
+| extend SharePct = round(100.0 * BillableGB / totalGB, 1)
+| render barchart</code></pre></div>
+
+        <div class="code-note"><svg class="icon"><use href="#i-activity"/></svg><span id="code-note">Pairs a failure threshold with a time-bounded success join, so a lone typo never alerts — only a credential that finally worked.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROJECTS ======================= -->
+<section id="projects" data-scene="Projects" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">04 — Projects</span><h2>Things I've <span class="grad-text">built.</span></h2><p>Security tooling, training platforms and Android apps — all open on GitHub.</p></div>
+
+    <article class="card featured reveal">
+      <div class="feat-copy">
+        <div class="proj-kicker"><svg class="icon"><use href="#i-radar"/></svg>Featured · Threat intelligence</div>
+        <h3>TFII</h3>
+        <p class="proj-sub">ThreatFeed Intelligence Platform</p>
+        <p class="lead">A self-hosted, open-source workspace that pulls public threat feeds and CVE data into one place — and shows its reasoning for every verdict.</p>
+        <ul class="feat-list">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Corroborated confidence</b> — independent sources combine; an aggregator is never double-counted.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Honest location</b> — IP location, CDN edge, TLD registry and registrant country are labelled, never conflated.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Bulk triage</b> — 150 IOCs at a time (defanged is fine), STIX 2.1 export and a TAXII 2.1 server.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>CVE intelligence</b> — CISA KEV and EPSS against <i>your</i> software inventory.</span></li>
         </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-    </div>
-  </header>
-  <!-- #header -->
-
-  <!--==========================
-  About Section
-  ============================-->
-  <section id="about">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">About Me</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">A Quick Detailing About Me.!</p>
+        <div class="tags"><span class="chip hot">Python · FastAPI</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">STIX / TAXII</span><span class="chip">MITRE ATT&amp;CK</span></div>
+        <div class="proj-links"><a class="btn btn-primary magnetic" href="https://github.com/sherifrahim/TFII" target="_blank" rel="noopener">View on GitHub <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <div class="shot">
+        <div class="browser" id="tfii-browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url" id="tfii-url">tfii.local / command-center</span></div>
+          <div class="browser-view" id="tfii-view" title="Click to enlarge"><div class="zoomer" data-zoom>
+            <img class="on" src="assets/img/projects/tfii-01-command-center.webp" alt="TFII Command Center dashboard" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-02-ioc-intelligence.webp" alt="TFII IOC Intelligence table with filters" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-03-indicator-and-dns.webp" alt="TFII indicator page with reasoning and DNS records" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-04-relationship-graph.webp" alt="TFII relationship graph" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-05-bulk-lookup.webp" alt="TFII bulk lookup" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-06-cve-intelligence.webp" alt="TFII CVE intelligence with KEV and EPSS" width="1280" height="800" loading="lazy">
+            <img src="assets/img/projects/tfii-07-global-search.webp" alt="TFII global search palette" width="1280" height="800" loading="lazy">
+          </div></div>
+        </div>
+        <div class="shot-tabs" role="tablist" aria-label="TFII screenshots">
+          <button class="shot-tab" role="tab" aria-selected="true" data-i="0" data-url="tfii.local / command-center">Command Center</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="1" data-url="tfii.local / iocs">IOC Intelligence</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="2" data-url="tfii.local / indicator">Indicator</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="3" data-url="tfii.local / graph">Graph</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="4" data-url="tfii.local / bulk">Bulk lookup</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="5" data-url="tfii.local / cves">CVEs</button>
+          <button class="shot-tab" role="tab" aria-selected="false" data-i="6" data-url="tfii.local / search">Ctrl+K</button>
         </div>
       </div>
+    </article>
+
+    <div class="filters reveal" role="group" aria-label="Filter projects">
+      <button class="filter" aria-pressed="true" data-f="all">All</button>
+      <button class="filter" aria-pressed="false" data-f="security">Security</button>
+      <button class="filter" aria-pressed="false" data-f="android">Android</button>
+      <button class="filter" aria-pressed="false" data-f="web">Web</button>
     </div>
-    <div class="container about-container wow fadeInUp">
-      <div class="row">
 
-        <div class="col-lg-6 about-img">
-          <img src="img/about-img.jpg" alt="">
+    <div class="proj-grid" id="proj-grid">
+      <a class="card project reveal snap tilt" data-cat="security web" style="--c:#34d3c0;--d:.0s" href="https://github.com/sherifrahim/CertPrep" target="_blank" rel="noopener">
+        <div class="proj-top"><div class="proj-ico"><svg class="icon"><use href="#i-flask"/></svg></div>
+          <h3>CertPrep <svg class="icon"><use href="#i-arrow"/></svg></h3>
+          <p>Exam prep for SC-200, SC-401 and SC-500 — quizzes, flashcards, timed mocks, plus a <b>simulated Defender XDR / Sentinel / Azure lab</b> with a real KQL engine and a full intrusion buried in the telemetry.</p></div>
+        <div class="proj-bottom"><div class="tags"><span class="chip">Next.js 15</span><span class="chip">Tailwind v4</span><span class="chip">Prisma</span><span class="chip">Postgres</span></div>
+          <div class="proj-stat"><span><b>534</b> tests</span><span><b>17</b> lab blades</span><span><b>14</b> tables</span></div></div>
+      </a>
+
+      <a class="card project reveal snap tilt" data-cat="security" style="--c:#5aa9ff;--d:.1s" href="https://github.com/sherifrahim/Sentinel-Workbooks" target="_blank" rel="noopener">
+        <div class="proj-top"><div class="proj-ico"><svg class="icon"><use href="#i-chart"/></svg></div>
+          <h3>Sentinel Workbooks <svg class="icon"><use href="#i-arrow"/></svg></h3>
+          <p>A weekly SOC reporting workbook for Microsoft Sentinel: incident trend, <b>ingestion volume and cost</b>, top log sources, MITRE tactic coverage, blocked IPs and failed-login leaders — with a flexible reporting range.</p></div>
+        <div class="proj-bottom"><div class="tags"><span class="chip">Sentinel</span><span class="chip">KQL</span><span class="chip">Azure Workbooks</span></div>
+          <div class="proj-stat"><span><b>7</b> report sections</span><span>JSON template</span></div></div>
+      </a>
+
+      <a class="card project reveal snap tilt" data-cat="android" style="--c:#a78bfa;--d:.2s" href="https://github.com/sherifrahim/kestrel" target="_blank" rel="noopener">
+        <div class="proj-top"><div class="proj-ico"><svg class="icon"><use href="#i-code"/></svg></div>
+          <h3>Kestrel <svg class="icon"><use href="#i-arrow"/></svg></h3>
+          <p>Tasker-grade automation and Modes for any Android phone. Uses Shizuku to <b>turn perishable shell authority into permanent grants</b> that survive reboots, and says plainly when a step can't run.</p></div>
+        <div class="proj-bottom"><div class="tags"><span class="chip">Kotlin</span><span class="chip">Compose</span><span class="chip">Shizuku</span><span class="chip">Room</span></div>
+          <div class="proj-stat"><span><b>23</b> actions</span><span><b>10</b> conditions</span><span><b>15</b> triggers</span></div></div>
+      </a>
+
+      <a class="card project wide reveal snap tilt" data-cat="android" style="--c:#4ade80;--d:.0s" href="https://github.com/sherifrahim/GetFitPro" target="_blank" rel="noopener">
+        <div class="proj-top"><div class="proj-ico"><svg class="icon"><use href="#i-phone"/></svg></div>
+          <h3>GetFit <svg class="icon"><use href="#i-arrow"/></svg></h3>
+          <p>A fast, private, <b>100% offline</b> Android workout tracker — no account, no analytics. Log sets, chase PRs and build streaks across a 1,300+ exercise library.</p></div>
+        <div class="proj-media" aria-hidden="false">
+          <img src="assets/img/getfit/home.webp" alt="GetFit home screen" width="270" height="600" loading="lazy">
+          <img src="assets/img/getfit/exercises.webp" alt="GetFit exercise library" width="270" height="600" loading="lazy">
+          <img src="assets/img/getfit/progress.webp" alt="GetFit progress screen" width="270" height="600" loading="lazy">
         </div>
+        <div class="proj-bottom"><div class="tags"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Room</span></div>
+          <div class="proj-stat"><span><b>1,300+</b> exercises</span><span>MIT licensed</span></div></div>
+      </a>
 
-        <div class="col-md-6 about-content">
-          <h2 class="about-title">A Young Tech Aspirant</h2>
-          <p class="about-text">
-            A 2nd Year undergraduate pursuing B.Tech, at KMEA ENGINEERING COLLEGE,Aluva.
-Currently Learning Java, Python , Data Structures, Android Studio,AOSP and Game Development. Who Also Loves to play Games.
-Worked as a Source Dev on some Custom AOSP Projects. Plan On Studying about Embedded Systems.I love to travel and is a great Enthusiast of Cars.
-
-          </p>
-        </div>
-      </div>
+      <a class="card project reveal snap tilt" data-cat="android" style="--c:#fbbf24;--d:.1s" href="https://github.com/sherifrahim/ledger" target="_blank" rel="noopener">
+        <div class="proj-top"><div class="proj-ico"><svg class="icon"><use href="#i-database"/></svg></div>
+          <h3>Ledger <svg class="icon"><use href="#i-arrow"/></svg></h3>
+          <p>A premium offline-first Android expense tracker — automatic tracking from <b>SMS and notification parsing</b>, smart categorisation, no ads and no cloud dependency.</p></div>
+        <div class="proj-bottom"><div class="tags"><span class="chip wip">In development</span><span class="chip">Kotlin</span><span class="chip">Material 3</span><span class="chip">Hilt</span></div>
+          <div class="proj-stat"><span>Offline-first</span><span>Room · DataStore</span></div></div>
+      </a>
     </div>
-  </section>
 
-  <!--==========================
-  Achievements & Skills Section
-  ============================-->
-  <section id="achievements">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Achievements & Skills</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">My Achievements and Skills that others should know of me. There maybe more but not well enough for me to say.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-desktop"></i></div>
-          <h4 class="service-title"><a href="">Android Open Source Project</a></h4>
-          <p class="service-description">Working,Altering and Improving AOSP Source Code</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-          <h4 class="service-title"><a href="">Python Basics</a></h4>
-          <p class="service-description">Basics On Python.Certified from University of Michigan with 60-Days Python Basics Course.</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-          <h4 class="service-title"><a href="">Android Studio Basics</a></h4>
-          <p class="service-description">Firing Up and Working on Basic Android Applications and its Components.Did a crash course on and is Certified upon it.</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-photo"></i></div>
-          <h4 class="service-title"><a href="">Photo and Video -Graphy</a></h4>
-          <p class="service-description">More like a Hobby and Passion, Showing others the beauty of things from our POV.Combined with timing and Manupilation of the Shots</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-road"></i></div>
-          <h4 class="service-title"><a href="">Basic Skills on C and Java</a></h4>
-          <p class="service-description">Beginner Skills On C and Java as taught from our College.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Subscrbe Section
-  ============================-->
-  <section id="subscribe">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-8">
-          <h3 class="subscribe-title">Subscribe For Updates</h3>
-          <p class="subscribe-text">Join My 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
-        </div>
-        <div class="col-md-4 subscribe-btn-container">
-          <a class="subscribe-btn" href="#">Subscribe Now</a>
-        </div>
+    <div class="labs reveal">
+      <h3>Detection &amp; SIEM labs</h3>
+      <p>Hands-on environments I build to learn each platform properly — and to give my team somewhere to practise.</p>
+      <div class="lab-grid">
+        <div class="card lab"><div class="num">LAB 01</div><h4>Splunk SIEM Engineering</h4><p>Shared training environment for L1/L2 analysts — Windows, Linux syslog and firewall ingestion, brute-force and suspicious-process detections, dashboards and saved searches.</p></div>
+        <div class="card lab"><div class="num">LAB 02</div><h4>IBM QRadar</h4><p>QRadar Community Edition fed via Syslog/LEEF and WinCollect, with correlation rules for brute force, port scanning and suspicious authentication.</p></div>
+        <div class="card lab"><div class="num">LAB 03</div><h4>Wazuh + Defender + VirusTotal</h4><p>Endpoint visibility and file-integrity monitoring, with custom detection rules enriched by VirusTotal for proactive malware triage.</p></div>
+        <div class="card lab"><div class="num">LAB 04</div><h4>ELK Stack</h4><p>Full ingestion pipelines for system, firewall and web logs, real-time alerting for auth anomalies, and tuned Elasticsearch indexing and retention.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!--==========================
-  Porfolio Section
-  ============================-->
-  <section id="portfolio">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Portfolio</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-        </div>
+<!-- ======================= SKILLS ======================= -->
+<section id="skills" data-scene="Skills">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">05 — Toolkit</span><h2>The stack I <span class="grad-text">work in.</span></h2></div>
+    <div class="skills-grid">
+      <div class="card skill-card reveal snap" style="--d:0s"><h3><svg class="icon"><use href="#i-database"/></svg>SIEM &amp; Detection</h3><div class="tags"><span class="chip hot">Microsoft Sentinel</span><span class="chip">Splunk</span><span class="chip">Wazuh</span><span class="chip">IBM QRadar</span><span class="chip">ELK Stack</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.08s"><h3><svg class="icon"><use href="#i-lock"/></svg>Endpoint &amp; Identity</h3><div class="tags"><span class="chip hot">Defender XDR</span><span class="chip">Defender for Endpoint</span><span class="chip">Entra ID · PIM</span><span class="chip">Identity Protection</span><span class="chip">Active Directory</span><span class="chip">Purview DLP</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.16s"><h3><svg class="icon"><use href="#i-cloud"/></svg>Cloud</h3><div class="tags"><span class="chip hot">Microsoft Azure</span><span class="chip">Azure Monitor</span><span class="chip">Log Analytics</span><span class="chip">Huawei Cloud</span><span class="chip">Cloudflare</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:0s"><h3><svg class="icon"><use href="#i-terminal"/></svg>Query &amp; Detection</h3><div class="tags"><span class="chip hot">KQL</span><span class="chip">Sentinel Analytics</span><span class="chip">Sigma Rules</span><span class="chip">SPL</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.08s"><h3><svg class="icon"><use href="#i-activity"/></svg>Incident Response</h3><div class="tags"><span class="chip">NIST SP 800-61</span><span class="chip">SANS PICERL</span><span class="chip">Malware triage</span><span class="chip">Containment playbooks</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.16s"><h3><svg class="icon"><use href="#i-radar"/></svg>Threat Intelligence</h3><div class="tags"><span class="chip">IOC triage</span><span class="chip">MITRE ATT&amp;CK mapping</span><span class="chip">MSRC Patch Tuesday</span><span class="chip">CTI ingestion</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:0s"><h3><svg class="icon"><use href="#i-search"/></svg>Vulnerability Management</h3><div class="tags"><span class="chip">Nessus</span><span class="chip">Qualys</span><span class="chip">Nexpose</span><span class="chip">Defender Vuln. Mgmt</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.08s"><h3><svg class="icon"><use href="#i-bug"/></svg>Penetration Testing</h3><div class="tags"><span class="chip">Nmap</span><span class="chip">Metasploit</span><span class="chip">Burp Suite</span><span class="chip">OpenVAS</span><span class="chip">Nikto</span><span class="chip">ZAP</span><span class="chip">Wireshark</span></div></div>
+      <div class="card skill-card reveal snap" style="--d:.16s"><h3><svg class="icon"><use href="#i-server"/></svg>OS &amp; Networking</h3><div class="tags"><span class="chip">Linux (Ubuntu, CentOS)</span><span class="chip">Windows Server</span><span class="chip">VPN</span><span class="chip">DNS</span><span class="chip">Syslog · CEF · LEEF</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CERTIFICATIONS ======================= -->
+<section id="certs" data-scene="Certifications" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">06 — Certifications</span><h2>Credentials, <span class="grad-text">earned and in flight.</span></h2></div>
+    <div class="certs">
+      <div class="card cert reveal watch" style="--d:0s"><div class="cert-top"><span class="cert-code">SC-200</span><span class="badge done">Earned</span></div><h3>Microsoft Security Operations Analyst Associate</h3><p>Sentinel, Defender XDR and KQL-driven threat response.</p><div class="bar"><i style="--p:1"></i></div></div>
+      <div class="card cert reveal watch" style="--d:.08s"><div class="cert-top"><span class="cert-code">SY0-701</span><span class="badge done">Earned</span></div><h3>CompTIA Security+</h3><p>Core security concepts, operations and governance.</p><div class="bar"><i style="--p:1"></i></div></div>
+      <div class="card cert reveal watch" style="--d:.16s"><div class="cert-top"><span class="cert-code">SC-900</span><span class="badge done">Earned</span></div><h3>Microsoft Security, Compliance and Identity Fundamentals</h3><p>Foundations across the Microsoft security portfolio.</p><div class="bar"><i style="--p:1"></i></div></div>
+      <div class="card cert reveal watch" style="--d:.0s"><div class="cert-top"><span class="cert-code">CPT</span><span class="badge done">Earned</span></div><h3>Certified Penetration Tester</h3><p>Ehackify — hands-on offensive security methodology.</p><div class="bar"><i style="--p:1"></i></div></div>
+      <div class="card cert reveal watch" style="--d:.08s"><div class="cert-top"><span class="cert-code">SC-500</span><span class="badge prog">In progress</span></div><h3>Microsoft Azure Security Engineer</h3><p>Securing Azure workloads, networks and identities.</p><div class="bar indet"><i></i></div></div>
+      <div class="card cert reveal watch" style="--d:.16s"><div class="cert-top"><span class="cert-code">SC-401</span><span class="badge prog">In progress</span></div><h3>Microsoft Information Security Administrator Associate</h3><p>Data protection, Purview DLP and information governance.</p><div class="bar indet"><i></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= OPEN SOURCE + EDUCATION ======================= -->
+<section id="opensource" data-scene="Open source">
+  <div class="container">
+    <div class="section-head reveal focus"><span class="eyebrow">07 — Beyond the SOC</span><h2>Open source <span class="grad-text">&amp; education.</span></h2></div>
+    <div class="os-grid">
+      <div class="card os-card reveal">
+        <span class="chip hot">Android · AOSP</span>
+        <h3>Neoteric OS</h3>
+        <p>A minimal custom Android ROM focused on UI/UX and performance, with a touch of security and privacy. I work at the AOSP level — device bring-up, vendor and hardware layers and framework forks across Xiaomi, Nothing and Qualcomm devices.</p>
+        <div class="tags" style="margin-bottom:22px"><span class="chip">AOSP</span><span class="chip">Device trees</span><span class="chip">SELinux policy</span><span class="chip">Qualcomm HALs</span></div>
+        <a class="btn magnetic" href="https://github.com/Neoteric-OS" target="_blank" rel="noopener">Neoteric-OS on GitHub <svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-1.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 1</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-2.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 2</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-3.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 3</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-4.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 4</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-5.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 5</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-6.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 6</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-7.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 7</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-8.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 8</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
+      <div class="card edu-card reveal" style="--d:.15s">
+        <div class="yr">2019 — 2023</div>
+        <h3>B.Tech, Computer Science &amp; Engineering</h3>
+        <p>KMEA Engineering College, Kochi<br>APJ Abdul Kalam Technological University (KTU), Kerala</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!--==========================
-  Quotes Section
-  ============================-->
-  <section id="quotes">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Favourite Quotes</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Some of My Favourite Quotes, that i think others should also know of.</p>
-        </div>
+<!-- ======================= CONTACT ======================= -->
+<section class="contact" id="contact" data-scene="Contact" style="padding-top:0">
+  <div class="container">
+    <div class="contact-card" id="contact-card">
+      <span class="eyebrow" style="justify-content:center">08 — Contact</span>
+      <h2>Let's build a SOC that <span class="grad-text">sees more.</span></h2>
+      <p class="lead">Hiring for a SOC or detection engineering role, or just want to compare notes on Sentinel and KQL? My inbox is open.</p>
+      <div class="contact-actions">
+        <button class="btn btn-primary magnetic" id="reveal-email" type="button">Reveal my email <svg class="icon"><use href="#i-mail"/></svg></button>
+        <a class="btn magnetic" href="https://www.linkedin.com/in/sherifrahim" target="_blank" rel="noopener">Connect on LinkedIn <svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <div class="profile">
-            <div class="pic"><img src="img/elon.jpg" alt=""></div>
-            <h4>Elon Musk</h4>
-            <span>SpaceX|Tesla|OpenAI|NeuraLink</span>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="quote">
-            <b><img src="img/quote_sign_left.png" alt=""></b> Failure is an option here. If things are not failing, you are not innovating enough. <small><img src="img/quote_sign_right.png" alt=""></small>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="quote">
-            <b><img src="img/quote_sign_left.png" alt=""></b> Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better. <small><img src="img/quote_sign_right.png" alt=""></small>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="profile">
-            <div class="pic"><img src="img/SamuelBeckett.jpg" alt=""></div>
-            <h4>Samuel Beckett</h4>
-            <span></span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!--==========================
-  Team Section
-  ============================-->
-  <section id="team">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">My Team</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-            <h4>Walter White</h4>
-            <span>Chief Executive Officer</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-            <h4>Sarah Jhinson</h4>
-            <span>Product Manager</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-            <h4>William Anderson</h4>
-            <span>CTO</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-            <h4>Amanda Jepson</h4>
-            <span>Accountant</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
+      <div class="email-reveal" id="email-reveal" aria-live="polite"></div>
+      <noscript><p style="margin-top:18px;color:var(--muted)">Enable JavaScript to reveal my email address — or reach me on LinkedIn.</p></noscript>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/sherifrahim" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+        <a href="https://github.com/sherifrahim" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+        <a href="https://medium.com/@sherifrahim" target="_blank" rel="noopener"><svg class="icon"><use href="#i-code"/></svg>Medium</a>
+        <span><svg class="icon"><use href="#i-pin"/></svg>Abu Dhabi, UAE</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+</main>
 
-  <!--==========================
-  Contact Section
-  ============================-->
-  <section id="contact">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Contact Us</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-      </div>
+<!-- ======================= END CREDITS ======================= -->
+<div class="credits" id="credits" aria-hidden="true">
+  <div class="credits-roll">
+    <div><small>Directed by</small><b>Sherif Rahim</b></div>
+    <div class="big"><b>Detect. Connect. Hunt. Tune.</b></div>
+    <div><small>Starring</small><b>Microsoft Sentinel · Defender XDR · Entra ID</b></div>
+    <div><small>Supporting cast</small><b>Splunk · Wazuh · QRadar · ELK Stack</b></div>
+    <div><small>Query language</small><b>KQL</b></div>
+    <div><small>Filmed on location</small><b>Abu Dhabi, UAE · Kochi, India</b></div>
+    <div><small>Special thanks</small><b>Every analyst who ever triaged a false positive</b></div>
+    <div><small>Note</small><b>No log sources were harmed in the making of this portfolio</b></div>
+  </div>
+</div>
 
-      <div class="row">
-        <div class="col-md-3 col-md-push-2">
-          <div class="info">
-            <div>
-              <i class="fa fa-map-marker"></i>
-              <p>A108 Adam Street<br>New York, NY 535022</p>
-            </div>
+<footer>
+  <div class="container">
+    <span>© <span id="year">2026</span> Sherif Rahim · Built by hand — no frameworks, no trackers.</span>
+    <span>Press <kbd>Ctrl</kbd><kbd>K</kbd> to jump anywhere</span>
+  </div>
+</footer>
 
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>info@example.com</p>
-            </div>
+<!-- Command palette -->
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command menu">
+  <div class="palette-box">
+    <div class="palette-input"><svg class="icon"><use href="#i-search"/></svg><input id="palette-input" type="text" placeholder="Jump to a section, open a project, run a command…" autocomplete="off" spellcheck="false" aria-label="Search commands"><kbd>Esc</kbd></div>
+    <div class="palette-list" id="palette-list" role="listbox"></div>
+    <div class="palette-foot"><span>↑↓ navigate</span><span>↵ select</span><span>esc close</span></div>
+  </div>
+</div>
 
-            <div>
-              <i class="fa fa-phone"></i>
-              <p>+1 5589 55488 55s</p>
-            </div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button class="x" type="button" aria-label="Close preview"><svg class="icon"><use href="#i-x"/></svg></button><img alt=""><div class="cap"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon"><use href="#i-check"/></svg><span></span></div>
 
-          </div>
-        </div>
-
-        <div class="col-md-5 col-md-push-2">
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Footer
-============================-->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copyright">
-            &copy; Copyright <strong>Sherif Rahim Theme</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-            -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- #footer -->
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-  <!-- Required JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/morphext/morphext.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
-  <script src="lib/easing/easing.js"></script>
-
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="js/custom.js"></script>
-
-  <script src="contactform/contactform.js"></script>
-
-
+<script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
