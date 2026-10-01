@@ -1,7 +1,7 @@
 /* ==========================================================================
    Sherif Rahim — portfolio
    Vanilla JS, no dependencies. Sections:
-   utils · theme · KQL highlighter · intro · hero (role cuts, terminal, network)
+   utils · theme · intro · hero (role cuts, SOC console, network)
    · scroll engine (reel cuts, dolly, zoom, timeline, HUD) · reveals · tilt/magnetic
    · detection tabs · projects (filter, screenshots, lightbox) · palette · misc
    ========================================================================== */
@@ -57,32 +57,7 @@
   function toggleTheme() { applyTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light"); }
   if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
 
-  /* ---------- KQL highlighter ---------- */
-  var KW = {};
-  ("let where summarize project extend join kind inner leftanti on by in has has_any has_all contains startswith endswith " +
-   "order sort top take limit distinct union asc desc and or not between render barchart timechart piechart true false " +
-   "let print datatable materialize")
-    .split(" ").forEach(function (k) { KW[k] = 1; });
-  var TOKEN = /(\/\/.*$)|(@?"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')|\b(\d+(?:\.\d+)?(?:ms|[smhdw])?)\b|\b([A-Za-z_][A-Za-z0-9_]*)\b|(\|)/g;
   function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
-  function highlightLine(line) {
-    var out = "", last = 0, m;
-    TOKEN.lastIndex = 0;
-    while ((m = TOKEN.exec(line))) {
-      out += esc(line.slice(last, m.index));
-      var t = m[0];
-      if (m[1]) out += '<span class="tk-c">' + esc(t) + "</span>";
-      else if (m[2]) out += '<span class="tk-s">' + esc(t) + "</span>";
-      else if (m[3]) out += '<span class="tk-n">' + esc(t) + "</span>";
-      else if (m[5]) out += '<span class="tk-o">|</span>';
-      else if (KW[t]) out += '<span class="tk-k">' + t + "</span>";
-      else if (line.charAt(m.index + t.length) === "(") out += '<span class="tk-f">' + t + "</span>";
-      else out += esc(t);
-      last = m.index + t.length;
-    }
-    return out + esc(line.slice(last));
-  }
-  function kqlHtml(text) { return text.split("\n").map(highlightLine).join("\n"); }
 
   /* ======================================================================
      INTRO — title card, boot sequence, jump-cut flash, curtain split
@@ -156,20 +131,29 @@
     }, 2300);
   }
 
-  function terminalType() {
-    var pre = $("#term-code"), rows = $$("#term-results .row");
-    if (!pre) return;
-    var text = pre.textContent;
-    function showRows() { rows.forEach(function (r, i) { setTimeout(function () { r.classList.add("show"); }, reduced ? 0 : 260 * i + 120); }); }
-    if (reduced) { pre.innerHTML = kqlHtml(text); showRows(); return; }
-    pre.innerHTML = "";
-    var i = 0;
-    (function step() {
-      i += 2;
-      pre.innerHTML = kqlHtml(text.slice(0, i)) + '<span class="caret" style="display:inline-block;width:7px;height:1em;background:var(--accent);vertical-align:-2px;margin-left:1px;animation:blink 1s steps(2) infinite"></span>';
-      if (i < text.length) setTimeout(step, 16 + Math.random() * 22);
-      else { pre.innerHTML = kqlHtml(text); setTimeout(showRows, 300); }
-    })();
+  /* Live SOC console: a rolling, entirely fictional incident feed */
+  var EVENTS = [
+    ["high", "High", "Impossible-travel sign-in", "Entra ID", "Session revoked"],
+    ["med", "Med", "Encoded PowerShell from Office", "Defender XDR", "Device isolated"],
+    ["low", "Info", "Noisy connector tuned", "Microsoft Sentinel", "Ingestion trimmed"],
+    ["high", "High", "Phishing link clicked", "Defender for Office 365", "Mail purged"],
+    ["med", "Med", "Privileged role used off-hours", "PIM", "Access reviewed"],
+    ["low", "Info", "Connector heartbeat restored", "Log Analytics", "Healthy again"],
+    ["high", "High", "Credential-dump attempt", "Defender for Endpoint", "Contained"],
+    ["med", "Med", "Unusual outbound transfer", "Azure Firewall", "Blocked"]
+  ];
+  function socFeed() {
+    var feed = $("#soc-feed");
+    if (!feed || reduced) return;
+    var i = 3;
+    setInterval(function () {
+      if (document.hidden || !netOn) return;
+      var e = EVENTS[i++ % EVENTS.length];
+      var row = document.createElement("div"); row.className = "frow new";
+      row.innerHTML = '<span class="sev ' + e[0] + '">' + e[1] + '</span><span class="ft">' + esc(e[2]) + "<small>" + esc(e[3]) + '</small></span><span class="state">' + esc(e[4]) + "</span>";
+      feed.insertBefore(row, feed.firstChild);
+      while (feed.children.length > 3) feed.removeChild(feed.lastChild);
+    }, 2600);
   }
 
   function startHero() {
@@ -178,7 +162,7 @@
     var g = $("#hero-grid");
     if (g && !reduced) { g.classList.add("pull"); g.addEventListener("animationend", function () { g.classList.remove("pull"); }, { once: true }); }
     $$("#hero-grid .reveal").forEach(function (el) { el.classList.add("in"); });
-    terminalType();
+    socFeed();
     roleCuts();
     setTimeout(function () { $$("#hero-grid .reveal").forEach(function (el) { el.classList.add("settled"); }); }, 1500);
   }
@@ -239,9 +223,9 @@
   }
 
   /* ---------- hero terminal tilt + cursor glow ---------- */
-  var term = $("#terminal");
+  var term = $("#soc");
   if (term && finePointer && !reduced) {
-    var tw = $(".terminal-wrap");
+    var tw = $(".soc-wrap");
     tw.addEventListener("pointermove", function (e) {
       var r = tw.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
@@ -261,7 +245,7 @@
   /* ======================================================================
      SCROLL ENGINE — progress, nav, spy, dolly, reel cuts, zoom, timeline, HUD
      ====================================================================== */
-  var nav = $("#nav"), progress = $("#scroll-progress"), heroGrid = $("#hero-grid");
+  var nav = $("#nav"), progress = $("#scroll-progress"), heroGrid = $("#hero-grid"), heroEl = $("#home");
   var reel = $("#reel"), reelTrack = $("#reel-track"), shots = $$(".shot", reel || document);
   var ticks = $$(".reel-ticks i"), reelFlash = $("#reel-flash"), reelTC = $("#reel-tc"), reelNo = $("#reel-shotno");
   var timeline = $("#timeline"), zoomers = $$("[data-zoom]"), marquee = $("#marquee-track");
@@ -294,7 +278,8 @@
 
     // hero dolly-out
     if (heroGrid && !reduced && !heroGrid.classList.contains("pull")) {
-      var hp = clamp(y / (vh * 0.9), 0, 1);
+      var hh = heroEl ? heroEl.offsetHeight : vh, hs = Math.max(0, hh - vh * 1.15);
+      var hp = clamp((y - hs) / (vh * 0.7), 0, 1);
       heroGrid.style.transform = hp > 0 ? "translateY(" + (-hp * 40).toFixed(1) + "px) scale(" + (1 - hp * 0.08).toFixed(4) + ")" : "";
       heroGrid.style.opacity = hp > 0 ? (1 - hp * 0.95).toFixed(3) : "";
     }
@@ -435,39 +420,36 @@
   });
 
   /* ======================================================================
-     DETECTION — tabs, line-by-line cuts, copy
+     DETECTION — intrusion walkthrough (stage tabs, auto-play, cuts)
      ====================================================================== */
-  var notes = [
-    "Pairs a failure threshold with a time-bounded success join, so a lone typo never alerts — only a credential that finally worked.",
-    "Office spawning PowerShell with an encoded payload is rarely legitimate — a high-signal pivot for macro-delivered phishing. Tune with an allow-list of known automation.",
-    "Credential theft without dropping a tool: rundll32 calls comsvcs.dll's MiniDump export against LSASS. Corroborate with Defender for Endpoint's own credential-theft alerts.",
-    "Start the cost conversation with data: rank tables by billable GB, then decide what to filter, sample or move to a cheaper tier — without losing detection-critical sources."
-  ];
-  $$("code.kql").forEach(function (code) {
-    var lines = code.textContent.split("\n");
-    code.innerHTML = lines.map(function (l, i) { return '<span class="ln" style="--i:' + i + '">' + highlightLine(l) + "</span>"; }).join("");
-  });
-  var dtabs = $$(".dtab"), dpanes = $$(".code-pane");
-  function selectTab(i, focus) {
-    dtabs.forEach(function (t, k) { t.setAttribute("aria-selected", k === i); t.tabIndex = k === i ? 0 : -1; });
-    dpanes.forEach(function (p, k) { p.classList.toggle("active", k === i); });
-    $("#code-title").textContent = dpanes[i].getAttribute("data-file");
-    $("#code-note").textContent = notes[i];
-    if (focus) dtabs[i].focus();
+  var stages = $$("#chain .stage"), panes = $$("#chain .stage-pane"), chain = $("#chain"), playBtn = $("#chain-play");
+  var curStage = 0, playing = !reduced, chainInView = false, chainTimer;
+  function chainState() { if (chain) chain.classList.toggle("playing", playing && chainInView); }
+  function chainNext() {
+    clearTimeout(chainTimer);
+    if (playing && chainInView && !document.hidden) chainTimer = setTimeout(function () { selectStage((curStage + 1) % stages.length); }, 6500);
   }
-  dtabs.forEach(function (t, i) {
-    t.addEventListener("click", function () { selectTab(i); });
-    t.addEventListener("keydown", function (e) {
-      var k = e.key;
-      if (k === "ArrowDown" || k === "ArrowRight") { e.preventDefault(); selectTab((i + 1) % dtabs.length, true); }
-      if (k === "ArrowUp" || k === "ArrowLeft") { e.preventDefault(); selectTab((i - 1 + dtabs.length) % dtabs.length, true); }
+  function selectStage(i, focus) {
+    curStage = i;
+    stages.forEach(function (t, k) { t.setAttribute("aria-selected", k === i); t.tabIndex = k === i ? 0 : -1; t.classList.toggle("done", k < i); });
+    panes.forEach(function (p, k) { p.classList.toggle("active", k === i); });
+    if (focus) stages[i].focus();
+    chainState(); chainNext();
+  }
+  function setPlay() { if (!playBtn) return; playBtn.setAttribute("aria-pressed", playing); $("span", playBtn).textContent = playing ? "Pause" : "Play"; }
+  if (chain && stages.length) {
+    stages.forEach(function (t, i) {
+      t.addEventListener("click", function () { playing = false; setPlay(); selectStage(i); });
+      t.addEventListener("keydown", function (e) {
+        var k = e.key, n = stages.length;
+        if (k === "ArrowRight" || k === "ArrowDown") { e.preventDefault(); playing = false; setPlay(); selectStage((i + 1) % n, true); }
+        if (k === "ArrowLeft" || k === "ArrowUp") { e.preventDefault(); playing = false; setPlay(); selectStage((i - 1 + n) % n, true); }
+      });
     });
-  });
-  var copyBtn = $("#copy-code");
-  if (copyBtn) copyBtn.addEventListener("click", function () {
-    var pane = $(".code-pane.active code");
-    copyText(pane.textContent.replace(/\n{2,}/g, "\n"), "KQL copied");
-  });
+    if (playBtn) playBtn.addEventListener("click", function () { playing = !playing; setPlay(); chainState(); chainNext(); });
+    new IntersectionObserver(function (en) { chainInView = en[0].isIntersecting; chainState(); chainNext(); }, { threshold: 0.35 }).observe(chain);
+    setPlay(); chainState();
+  }
 
   /* ======================================================================
      PROJECTS — filter, screenshot switcher, lightbox
@@ -534,7 +516,7 @@
     { g: "Navigate", t: "The Reel", i: "i-play", k: "what i do showreel", run: go("reel") },
     { g: "Navigate", t: "About", i: "i-shield", k: "bio summary", run: go("about") },
     { g: "Navigate", t: "Experience", i: "i-layers", k: "work jobs timeline", run: go("experience") },
-    { g: "Navigate", t: "Detection engineering (KQL)", i: "i-terminal", k: "queries sentinel kql", run: go("detection") },
+    { g: "Navigate", t: "Detection — follow the intruder", i: "i-shield", k: "detection engineering intrusion attack chain mitre kql", run: go("detection") },
     { g: "Navigate", t: "Projects", i: "i-code", k: "work github", run: go("projects") },
     { g: "Navigate", t: "Toolkit", i: "i-database", k: "skills stack", run: go("skills") },
     { g: "Navigate", t: "Certifications", i: "i-award", k: "sc-200 security+ cpt", run: go("certs") },

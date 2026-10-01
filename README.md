@@ -1,6 +1,6 @@
 # Sherif Rahim — Portfolio
 
-Personal portfolio for a SOC & Security Engineer. A single static page with a cinematic feel: title-card intro, a pinned scroll-scrubbed "reel" with real jump cuts, zoom punches, whip-pans and an iris wipe, plus a live KQL terminal, a detection-queries showcase and a command palette.
+Personal portfolio for a SOC & Security Engineer. A single static page with a cinematic feel: title-card intro, a pinned scroll-scrubbed "reel" with real jump cuts, zoom punches, whip-pans and an iris wipe, plus a live SOC console, an interactive intrusion walkthrough and a command palette.
 
 **No framework, no build step, no trackers, no third-party requests.** Plain HTML, CSS and vanilla JS, with fonts self-hosted — so it deploys to GitHub Pages as-is.
 
@@ -48,10 +48,10 @@ Respects `prefers-reduced-motion` (no intro, static reel, no grain animation). W
 - Everything lives in `index.html` — experience, projects, certifications, skills.
 - Keyboard-palette entries (`Ctrl/⌘ + K`) are the `commands` array in `assets/js/main.js`.
 - Colours and type are CSS variables at the top of `assets/css/styles.css`.
-- The four example KQL queries are inline in the `#detection` section; syntax highlighting is applied in JS.
+- The six intrusion stages are plain HTML panes in the `#detection` section; the live feed events are the `EVENTS` array in `assets/js/main.js`.
 
 ## Notes
 
 - The contact email is never in the HTML or JS as plain text; it is rebuilt at runtime and only shown when a visitor clicks **Reveal my email**.
-- KQL examples are illustrative and sanitised; the terminal results use fictional `contoso.com` users and documentation-range IPs.
+- The hero console and incident feed are fictional demo data.
 - Project screenshots are from the respective repositories' own READMEs.

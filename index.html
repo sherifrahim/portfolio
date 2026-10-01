@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}#intro{display:none!important}.term-results .row{opacity:1!important;transform:none!important}.role .wipe,.contact-card{clip-path:none!important}.contact-card h2{opacity:1!important;filter:none!important;transform:none!important}.bar i{transform:none!important}.timeline::before,.role::before{transform:none!important}.reel-head,.reel-progress,.reel-ticks,.reel-title{display:none!important}.credits{height:auto!important}.credits-roll{position:static!important;animation:none!important;padding:40px 0}.browser-view .zoomer{transform:none!important}.code-pane .ln{opacity:1!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}#intro{display:none!important}.role .wipe,.contact-card{clip-path:none!important}.contact-card h2{opacity:1!important;filter:none!important;transform:none!important}.bar i{transform:none!important}.timeline::before,.role::before{transform:none!important}.reel-head,.reel-progress,.reel-ticks,.reel-title{display:none!important}.credits{height:auto!important}.credits-roll{position:static!important;animation:none!important;padding:40px 0}.browser-view .zoomer{transform:none!important}</style></noscript>
 
 <!-- SVG icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -77,7 +77,7 @@
 <div id="intro" aria-hidden="true">
   <div class="curtain t"></div><div class="curtain b"></div>
   <div class="bar t"></div><div class="bar b"></div>
-  <div class="stage">
+  <div class="intro-stage">
     <div class="boot" id="boot"></div>
     <div class="count"><span id="intro-pct">000</span><small>%</small></div>
     <div class="title">
@@ -149,21 +149,33 @@
         </div>
       </div>
 
-      <div class="terminal-wrap reveal" style="--d:.3s">
+      <div class="soc-wrap reveal" style="--d:.3s">
         <div class="float-card b" aria-hidden="true"><small>Ingestion cost</small><b class="grad-text">−30–40%</b>
           <svg class="spark" viewBox="0 0 96 30" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 14,8 26,5 38,12 50,14 62,20 74,22 94,26"/></svg></div>
-        <div class="terminal" id="terminal">
-          <div class="term-bar"><i></i><i></i><i></i><span>Microsoft Sentinel · Advanced hunting</span></div>
-          <div class="term-body"><pre id="term-code" aria-label="Example KQL query">SigninLogs
-| where TimeGenerated &gt; ago(1h)
-| where ResultType in ("50126", "50053")
-| summarize Failures = count() by UserPrincipalName, IPAddress
-| where Failures &gt; 10</pre></div>
-          <div class="term-results" id="term-results" aria-label="Example results (demo data)">
-            <div class="row head"><span>User</span><span>Source IP</span><span>Fails</span><span>Sev</span></div>
-            <div class="row"><span>a.khan@contoso.com</span><span>203.0.113.42</span><span>212</span><span class="sev high">High</span></div>
-            <div class="row"><span>svc-backup@contoso.com</span><span>198.51.100.7</span><span>64</span><span class="sev med">Med</span></div>
-            <div class="row"><span>m.lopez@contoso.com</span><span>192.0.2.119</span><span>17</span><span class="sev low">Low</span></div>
+        <div class="terminal soc" id="soc">
+          <div class="term-bar"><i></i><i></i><i></i><span>Live SOC · multi-tenant · demo data</span></div>
+          <div class="soc-top">
+            <div class="radar" aria-hidden="true">
+            <svg viewBox="0 0 200 200" role="presentation">
+              <defs><linearGradient id="sw" gradientUnits="userSpaceOnUse" x1="100" y1="10" x2="36" y2="36"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs>
+              <circle class="ring" cx="100" cy="100" r="30"/><circle class="ring" cx="100" cy="100" r="60"/><circle class="ring" cx="100" cy="100" r="90"/>
+              <line class="ring" x1="100" y1="8" x2="100" y2="192"/><line class="ring" x1="8" y1="100" x2="192" y2="100"/>
+              <g class="sweep"><path d="M100 100 L100 10 A90 90 0 0 0 36.4 36.4 Z" fill="url(#sw)"/><line x1="100" y1="100" x2="100" y2="10" style="stroke:var(--accent)" stroke-width="1.5"/></g>
+              <circle class="blip" cx="126.2" cy="43.8" r="3" style="animation-delay:-5.58s"/><circle class="blip" cx="139.6" cy="94.4" r="3" style="animation-delay:-4.63s"/><circle class="blip hot" cx="145.6" cy="158.3" r="4" style="animation-delay:-3.63s"/><circle class="blip" cx="83.9" cy="149.5" r="3" style="animation-delay:-2.70s"/><circle class="blip" cx="22.4" cy="119.4" r="3" style="animation-delay:-1.73s"/><circle class="blip" cx="65.8" cy="69.2" r="3" style="animation-delay:-0.80s"/>
+              <circle cx="100" cy="100" r="3.5" style="fill:var(--accent)"/>
+            </svg>
+            </div>
+            <ul class="health" aria-label="Connector health (demo)">
+              <li><span class="hd"></span>Microsoft Sentinel<em>healthy</em></li>
+              <li><span class="hd"></span>Defender XDR<em>healthy</em></li>
+              <li><span class="hd"></span>Entra ID<em>healthy</em></li>
+              <li><span class="hd"></span>Purview DLP<em>healthy</em></li>
+            </ul>
+          </div>
+          <div class="feed" id="soc-feed" aria-label="Example incident feed (demo data)">
+            <div class="frow"><span class="sev high">High</span><span class="ft">Impossible-travel sign-in<small>Entra ID</small></span><span class="state">Session revoked</span></div>
+            <div class="frow"><span class="sev med">Med</span><span class="ft">Encoded PowerShell from Office<small>Defender XDR</small></span><span class="state">Device isolated</span></div>
+            <div class="frow"><span class="sev low">Info</span><span class="ft">Noisy connector tuned<small>Microsoft Sentinel</small></span><span class="state">Ingestion trimmed</span></div>
           </div>
         </div>
         <div class="float-card a" aria-hidden="true"><small>Critical infra onboarded</small><b>4 days <span style="font-size:.9rem;color:var(--faint);font-weight:500">vs 10</span></b></div>
@@ -384,70 +396,49 @@ T1041  Exfiltration Over C2 Channel</div></div>
 <!-- ======================= DETECTION ======================= -->
 <section id="detection" data-scene="Detection">
   <div class="container">
-    <div class="section-head reveal focus"><span class="eyebrow">03 — Detection engineering</span><h2>Queries I'd <span class="grad-text">actually ship.</span></h2><p>Illustrative KQL in the style I write for Sentinel and Defender XDR — sanitised examples, not client content.</p></div>
-    <div class="detect-grid reveal" style="--d:.1s">
-      <div class="detect-tabs" role="tablist" aria-label="Example detections">
-        <button class="dtab" role="tab" aria-selected="true" aria-controls="p0" id="t0"><span class="mitre">T1110 · Credential access</span><strong>Brute force → success</strong><span class="d">Many failures from one source followed by a successful sign-in within the hour.</span></button>
-        <button class="dtab" role="tab" aria-selected="false" aria-controls="p1" id="t1" tabindex="-1"><span class="mitre">T1059.001 · Execution</span><strong>Encoded PowerShell from Office</strong><span class="d">Office apps spawning PowerShell with encoded or base64 payloads.</span></button>
-        <button class="dtab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1"><span class="mitre">T1003.001 · Credential access</span><strong>LSASS dump via comsvcs.dll</strong><span class="d">MiniDump through rundll32 — a classic living-off-the-land credential theft.</span></button>
-        <button class="dtab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1"><span class="mitre">Cost · SIEM optimisation</span><strong>Where's the ingestion bill going?</strong><span class="d">Rank billable tables to find the low-value data worth filtering.</span></button>
+    <div class="section-head reveal focus"><span class="eyebrow">03 — Detection engineering</span><h2>Follow the <span class="grad-text">intruder.</span></h2><p>A staged intrusion and the points where a well-tuned SOC catches it. Pick a stage, or let it play. Detections like these live as analytics rules in Sentinel.</p></div>
+    <div class="chain reveal" id="chain" style="--d:.1s">
+      <div class="stages" role="tablist" aria-label="Attack stages">
+        <button class="stage" role="tab" id="st0" aria-selected="true" aria-controls="sp0" tabindex="0"><span class="n">01</span><strong>Initial access</strong><span class="m">T1566</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st1" aria-selected="false" aria-controls="sp1" tabindex="-1"><span class="n">02</span><strong>Valid accounts</strong><span class="m">T1078</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st2" aria-selected="false" aria-controls="sp2" tabindex="-1"><span class="n">03</span><strong>Execution</strong><span class="m">T1059.001</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st3" aria-selected="false" aria-controls="sp3" tabindex="-1"><span class="n">04</span><strong>Credential access</strong><span class="m">T1003.001</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st4" aria-selected="false" aria-controls="sp4" tabindex="-1"><span class="n">05</span><strong>Lateral movement</strong><span class="m">T1021</span><i class="fill"></i></button>
+        <button class="stage" role="tab" id="st5" aria-selected="false" aria-controls="sp5" tabindex="-1"><span class="n">06</span><strong>Exfiltration</strong><span class="m">T1041</span><i class="fill"></i></button>
       </div>
-      <div class="code-panel">
-        <div class="code-top"><span id="code-title">brute-force-then-success.kql</span><button class="copy" id="copy-code" type="button"><svg class="icon"><use href="#i-copy"/></svg><span>Copy</span></button></div>
-
-<div class="code-pane active" role="tabpanel" id="p0" aria-labelledby="t0" data-file="brute-force-then-success.kql"><pre><code class="kql">// Brute force followed by a successful sign-in  ·  T1110
-let successWindow = 1h;
-let failures =
-    SigninLogs
-    | where TimeGenerated &gt; ago(24h)
-    | where ResultType in ("50126", "50053", "50057")
-    | summarize FailedCount = count(), FirstFail = min(TimeGenerated)
-        by UserPrincipalName, IPAddress
-    | where FailedCount &gt;= 10;
-failures
-| join kind=inner (
-    SigninLogs
-    | where TimeGenerated &gt; ago(24h)
-    | where ResultType == 0
-    | project SuccessTime = TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName
-) on UserPrincipalName, IPAddress
-| where SuccessTime between (FirstFail .. (FirstFail + successWindow))
-| project UserPrincipalName, IPAddress, FailedCount, SuccessTime, AppDisplayName</code></pre></div>
-
-<div class="code-pane" role="tabpanel" id="p1" aria-labelledby="t1" data-file="encoded-powershell-from-office.kql"><pre><code class="kql">// Encoded PowerShell launched from an Office process  ·  T1059.001
-DeviceProcessEvents
-| where Timestamp &gt; ago(7d)
-| where FileName in~ ("powershell.exe", "pwsh.exe")
-| where ProcessCommandLine has_any ("-enc", "-EncodedCommand", "FromBase64String")
-| where InitiatingProcessFileName in~ ("winword.exe", "excel.exe", "outlook.exe")
-| project Timestamp, DeviceName, AccountName,
-          InitiatingProcessFileName, ProcessCommandLine
-| order by Timestamp desc</code></pre></div>
-
-<div class="code-pane" role="tabpanel" id="p2" aria-labelledby="t2" data-file="lsass-dump-comsvcs.kql"><pre><code class="kql">// LSASS memory dump through comsvcs.dll MiniDump  ·  T1003.001
-DeviceProcessEvents
-| where Timestamp &gt; ago(7d)
-| where FileName =~ "rundll32.exe"
-| where ProcessCommandLine has "comsvcs"
-    and ProcessCommandLine has_any ("MiniDump", "#24")
-| extend DumpTarget = extract(@"(?i)minidump\s+(\d+)", 1, ProcessCommandLine)
-| project Timestamp, DeviceName, AccountName, DumpTarget, ProcessCommandLine</code></pre></div>
-
-<div class="code-pane" role="tabpanel" id="p3" aria-labelledby="t3" data-file="ingestion-cost-audit.kql"><pre><code class="kql">// Where is the ingestion bill going?  ·  SIEM cost optimisation
-let totalGB = toscalar(
-    Usage
-    | where TimeGenerated &gt; ago(30d) and IsBillable == true
-    | summarize sum(Quantity) / 1000
-);
-Usage
-| where TimeGenerated &gt; ago(30d)
-| where IsBillable == true
-| summarize BillableGB = round(sum(Quantity) / 1000, 2) by DataType
-| top 10 by BillableGB desc
-| extend SharePct = round(100.0 * BillableGB / totalGB, 1)
-| render barchart</code></pre></div>
-
-        <div class="code-note"><svg class="icon"><use href="#i-activity"/></svg><span id="code-note">Pairs a failure threshold with a time-bounded success join, so a lone typo never alerts — only a credential that finally worked.</span></div>
+      <div class="stage-pane active" role="tabpanel" id="sp0" aria-labelledby="st0">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1566 · Phishing</div><h3>Initial access</h3><p>A convincing “invoice” email lands, linking to a fake Microsoft sign-in page.</p><div class="goal"><small>Their goal</small>Get a foothold</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Email and URL-click telemetry flags the lure before most users have even seen it.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Office 365</span><span class="chip">URL click logs</span><span class="chip">Sentinel</span></div><ul class="resp"><li>Quarantine and purge the message</li><li>Block the sender and the URL</li><li>Warn the people who clicked</li></ul></div>
+      </div>
+      <div class="stage-pane" role="tabpanel" id="sp1" aria-labelledby="st1">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1078 · Credential replay</div><h3>Valid accounts</h3><p>Harvested credentials are replayed from an unfamiliar country — down a legacy path with no MFA prompt.</p><div class="goal"><small>Their goal</small>Look like a real user</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Sign-in risk signals stand out sharply against the user's normal pattern of life.</p><div class="tags" style="margin-top:14px"><span class="chip">Entra ID sign-ins</span><span class="chip">Identity Protection</span><span class="chip">Conditional Access</span></div><ul class="resp"><li>Revoke sessions on the spot</li><li>Force a password and MFA reset</li><li>Close the legacy-auth gap for good</li></ul></div>
+      </div>
+      <div class="stage-pane" role="tabpanel" id="sp2" aria-labelledby="st2">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1059.001 · PowerShell</div><h3>Execution</h3><p>A macro launches PowerShell with an encoded payload to fetch the next stage.</p><div class="goal"><small>Their goal</small>Run code quietly</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Endpoint process telemetry shows an Office app spawning PowerShell — rarely legitimate, easy to spot.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Endpoint</span><span class="chip">Process events</span><span class="chip">KQL analytics rule</span></div><ul class="resp"><li>Isolate the device</li><li>Collect an investigation package</li><li>Hunt the same pattern across the fleet</li></ul></div>
+      </div>
+      <div class="stage-pane" role="tabpanel" id="sp3" aria-labelledby="st3">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1003.001 · LSASS dump</div><h3>Credential access</h3><p>LSASS memory is dumped through a trusted system DLL, so no tooling ever touches disk.</p><div class="goal"><small>Their goal</small>Steal more identities</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>A living-off-the-land trick — but the command line and the target process give it away.</p><div class="tags" style="margin-top:14px"><span class="chip">Defender for Endpoint alerts</span><span class="chip">Command-line telemetry</span><span class="chip">Custom detection</span></div><ul class="resp"><li>Isolate and contain</li><li>Reset every exposed credential</li><li>Review privileged access with PIM</li></ul></div>
+      </div>
+      <div class="stage-pane" role="tabpanel" id="sp4" aria-labelledby="st4">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1021 · Remote services</div><h3>Lateral movement</h3><p>A service account starts logging on to hosts it has never touched before.</p><div class="goal"><small>Their goal</small>Reach what matters</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Service accounts have a predictable footprint — so any deviation is loud once identity and endpoint data are joined up.</p><div class="tags" style="margin-top:14px"><span class="chip">Windows logon events</span><span class="chip">Entra ID</span><span class="chip">Sentinel correlation</span></div><ul class="resp"><li>Disable and rotate the account</li><li>Scope the blast radius</li><li>Tighten its logon rights</li></ul></div>
+      </div>
+      <div class="stage-pane" role="tabpanel" id="sp5" aria-labelledby="st5">
+        <div class="side atk"><div class="kick"><svg class="icon"><use href="#i-bug"/></svg>The intruder · T1041 · Over C2 channel</div><h3>Exfiltration</h3><p>Data starts leaving for an external endpoint in unusually large transfers.</p><div class="goal"><small>Their goal</small>Take the data and go</div></div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side def"><div class="kick"><svg class="icon"><use href="#i-shield"/></svg>The SOC catches it</div><h3>Seen. Understood. Contained.</h3><p>Egress volume, firewall logs and DLP policy all get a vote — and together they rarely miss.</p><div class="tags" style="margin-top:14px"><span class="chip">Azure Firewall logs</span><span class="chip">Purview DLP</span><span class="chip">Network telemetry</span></div><ul class="resp"><li>Block egress at the edge</li><li>Preserve the evidence</li><li>Write it up and close the gaps</li></ul></div>
+      </div>
+      <div class="chain-foot">
+        <span>Every stage mapped to a technique, every technique to a signal — and the noise trade-off kept honest.</span>
+        <button class="play" id="chain-play" type="button" aria-pressed="true"><svg class="icon"><use href="#i-play"/></svg><span>Pause</span></button>
       </div>
     </div>
   </div>
