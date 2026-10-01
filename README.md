@@ -33,7 +33,7 @@ assets/
 
 | Where | Technique |
 | --- | --- |
-| Page load | Letterboxed title-card intro: boot log → white-flash **jump cut** → tracking-in title → **curtain split**. Plays once per session; `Enter`/`Esc`/click skips it. |
+| Page load | Letterboxed title-card intro: boot log → white-flash **jump cut** → tracking-in title → **curtain split**. Full version plays once per browser session (`Enter`/`Esc`/click skips it); repeat loads get a short **curtain-split** reveal instead, so every page open has an opening shot. Add `?intro` to the URL to replay the full intro. |
 | Hero | Camera **pull-back** on entry, **glitch cut** on the headline, role titles that **hard-cut** with a punch-in, **dolly-out** as you scroll away. |
 | The Reel | Pinned section scrubbed by scroll. Four shots, four cuts: **flash cut**, **zoom punch**, **whip-pan**, **iris**. Scroll-driven letterbox bars frame it. |
 | Experience | "Scene" slates, **wipe** reveals, a timeline that draws as you scroll. |

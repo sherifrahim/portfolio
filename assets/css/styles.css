@@ -925,3 +925,15 @@ code, pre, kbd, .hud, .chip { font-variant-ligatures: none; font-feature-setting
 .stage { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
 /* equal-height tabs */
 .stage strong { min-height: 2.4em; }
+
+/* Quick reveal (repeat visits) */
+#intro .quick-mark { position: absolute; inset: 0; z-index: 5; display: none; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: clamp(3.4rem, 11vw, 6.5rem); letter-spacing: -0.05em; pointer-events: none; background: none; }
+#intro .quick-mark { color: transparent; background: linear-gradient(120deg, #34d3c0, #5aa9ff 55%, #a78bfa); -webkit-background-clip: text; background-clip: text; }
+#intro.quick .quick-mark { display: grid; animation: qm 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes qm { 0% { opacity: 0; transform: scale(1.6); filter: blur(14px); } 45% { opacity: 1; } 100% { opacity: 1; transform: none; filter: none; } }
+#intro.quick .bar, #intro.quick .intro-stage, #intro.quick .skip { display: none; }
+#intro.quick.out .quick-mark { animation: none; opacity: 0; transition: opacity 0.22s; }
+.path-more { display: inline-flex; align-items: center; gap: 7px; margin: 2px 26px 6px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--accent); }
+.path-more .icon { width: 0.95em; height: 0.95em; transition: transform 0.3s var(--ease); }
+.path-more:hover .icon { transform: translate(2px, -2px); }
+@media (max-width: 640px) { .path-more { margin-left: 18px; } }

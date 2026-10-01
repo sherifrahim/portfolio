@@ -67,9 +67,19 @@
   var introTimers = [];
   function later(fn, ms) { var t = setTimeout(fn, ms); introTimers.push(t); return t; }
 
+  /* Repeat visits: a short curtain-split reveal so every page open has an opening shot */
+  function quickReveal() {
+    intro.classList.add("quick");
+    root.style.overflow = "hidden";
+    later(function () { intro.classList.add("out"); later(startHero, 320); }, 700);
+    setTimeout(function () { root.style.overflow = ""; if (intro && intro.parentNode) intro.remove(); }, 1750);
+  }
+
   function runIntro() {
     if (!intro) { startHero(); return; }
-    if (reduced || store.get("introSeen")) { intro.remove(); startHero(); return; }
+    if (reduced) { intro.remove(); startHero(); return; }
+    var forceFull = /[?&]intro(?:=|&|$)/.test(location.search);
+    if (store.get("introSeen") && !forceFull) { quickReveal(); return; }
     store.set("introSeen", "1");
     root.style.overflow = "hidden";
 
